@@ -1,0 +1,25 @@
+{
+  "name": "viewr",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deli123/Viewr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deli123/Viewr/issues"
+  },
+  "homepage": "https://github.com/deli123/Viewr#readme",
+  "engines": {
+    "node": "16.x"
+  }
+}
