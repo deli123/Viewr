@@ -1,20 +1,18 @@
-import { Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormPage";
-import Navigation from "./components/Navigation";
-import SignupFormPage from "./components/SignupFormPage";
+import { Redirect, Route, Switch } from "react-router-dom";
+import LoginFormPage from "./views/LoginFormPage";
+import SignupFormPage from "./views/SignupFormPage";
+import ExplorePage from "./views/ExplorePage";
+import SplashPage from "./views/SplashPage/SplashPage";
 
 function App() {
   return (
     <>
-      <h1>Hello from App</h1>
-      <Navigation/>
       <Switch>
-        <Route path="/login">
-          <LoginFormPage />
-        </Route>
-        <Route path="/signup">
-          <SignupFormPage />
-        </Route>
+        <Route exact path="/" component={SplashPage} />
+        <Route path="/login" component={LoginFormPage} />
+        <Route path="/signup" component={SignupFormPage} />
+        <Route path="/explore" component={ExplorePage} />
+        <Redirect to="/" />
       </Switch>
     </>
   );

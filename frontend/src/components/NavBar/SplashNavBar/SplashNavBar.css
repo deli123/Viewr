@@ -1,0 +1,15 @@
+.splash-nav-container {
+  display: flex;
+  height: 64px;
+  padding: 0 24px;
+}
+
+.session-links li {
+  display: inline-block;
+  align-items: center;
+  justify-items: end;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 20px;
+}
