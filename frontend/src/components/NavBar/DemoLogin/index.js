@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../../store/session";
 import { useDispatch } from "react-redux";
 
-export default function DemoLogin() {
+const DemoLogin = () => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
 
@@ -39,4 +39,6 @@ export default function DemoLogin() {
       <button onClick={handleSubmit}>Demo Login</button>
     </>
   );
-}
+};
+
+export default DemoLogin;

@@ -1,9 +1,11 @@
 import LoginForm from "../../components/NavBar/LoginForm";
 
-export default function LoginFormPage() {
+const LoginFormPage = () => {
   return (
     <>
       <LoginForm />
     </>
   );
-}
+};
+
+export default LoginFormPage;

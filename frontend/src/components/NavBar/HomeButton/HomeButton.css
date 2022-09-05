@@ -1,0 +1,16 @@
+.logo-container {
+  width: 178.25px;
+}
+
+.home-button {
+  font-size: 32px;
+  color: #f5f5f5;
+  font-weight: 600;
+  align-items: center;
+}
+
+.home-button img {
+  border-radius: 5px;
+  height: 16px;
+  margin-right: 5px;
+}

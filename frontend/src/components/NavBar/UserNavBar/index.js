@@ -1,9 +1,11 @@
 import HomeButton from "../HomeButton";
 
-export default function NavBar() {
+const NavBar = () => {
   return (
     <>
-      <HomeButton/>
+      <HomeButton />
     </>
-  )
-}
+  );
+};
+
+export default NavBar;

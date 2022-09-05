@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
+import "./HomeButton.css";
+import logo from "../../../assets/logo.png";
 
-function HomeButton() {
+const HomeButton = () => {
   return (
     <>
-      <button>
-        <Link to="/">viewr</Link>
-      </button>
+      <div className="logo-container">
+        <Link className="home-button" to="/">
+          <img id="logo" src={logo} />
+          viewr
+        </Link>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default HomeButton;

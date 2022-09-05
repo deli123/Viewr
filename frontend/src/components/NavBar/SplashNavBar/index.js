@@ -1,7 +1,7 @@
 import Navigation from "../Navigation";
 import "./SplashNavBar.css";
 
-export default function SplashNavBar() {
+const SplashNavBar = () => {
   return (
     <>
       <nav className="splash-nav-container">
@@ -9,4 +9,6 @@ export default function SplashNavBar() {
       </nav>
     </>
   );
-}
+};
+
+export default SplashNavBar;

@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../../store/session";
 import { FaUserCircle } from "react-icons/fa";
-import { Redirect } from "react-router-dom";
 
-function ProfileButton({ user }) {
+const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -28,13 +27,12 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    <Redirect to="/"/>
   };
 
   return (
     <>
       <button onClick={openMenu}>
-        <FaUserCircle/>
+        <FaUserCircle />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
@@ -47,6 +45,6 @@ function ProfileButton({ user }) {
       )}
     </>
   );
-}
+};
 
 export default ProfileButton;

@@ -1,0 +1,21 @@
+footer {
+  display: flex;
+  height: 40px;
+  background-color: #101010;
+}
+
+footer a {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+footer a:hover {
+  color: whitesmoke;
+  transition: color 0.15s ease-in-out;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}

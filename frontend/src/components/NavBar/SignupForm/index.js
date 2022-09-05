@@ -6,7 +6,7 @@ import DemoLogin from "../DemoLogin";
 import NavBar from "../UserNavBar";
 import "./SignupForm.css";
 
-export default function SignupForm() {
+const SignupForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [fname, setFname] = useState("");
@@ -96,4 +96,6 @@ export default function SignupForm() {
       <DemoLogin />
     </>
   );
-}
+};
+
+export default SignupForm;

@@ -4,8 +4,9 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import HomeButton from "../HomeButton";
+import PersonalLinks from "../PersonalLinks";
 
-function Navigation() {
+const Navigation = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
   let sessionLinks;
@@ -14,12 +15,12 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <button className="login-button">
-          <Link to="/login">Log In</Link>
-        </button>
-        <button className="signup-button">
-          <Link to="/signup">Sign Up</Link>
-        </button>
+        <Link className="login-button" to="/login">
+          Log In
+        </Link>
+        <Link className="nav-button signup-button" to="/signup">
+          Sign Up
+        </Link>
       </>
     );
   }
@@ -27,11 +28,12 @@ function Navigation() {
   return (
     <>
       <HomeButton />
+      <PersonalLinks/>
       <ul className="session-links">
         <li>{sessionLinks}</li>
       </ul>
     </>
   );
-}
+};
 
 export default Navigation;

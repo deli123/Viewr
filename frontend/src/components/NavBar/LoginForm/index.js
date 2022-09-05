@@ -6,7 +6,7 @@ import "./LoginForm.css";
 import NavBar from "../UserNavBar";
 import DemoLogin from "../DemoLogin";
 
-export default function LoginForm() {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
@@ -67,4 +67,6 @@ export default function LoginForm() {
       <DemoLogin />
     </>
   );
-}
+};
+
+export default LoginForm;
