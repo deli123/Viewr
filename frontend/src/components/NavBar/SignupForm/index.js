@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
 import DemoLogin from "../DemoLogin";
-import NavBar from "../UserNavBar";
-import "./SignupForm.css";
 
 const SignupForm = () => {
   const dispatch = useDispatch();
@@ -39,61 +37,65 @@ const SignupForm = () => {
 
   return (
     <>
-      <NavBar />
-      <form onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h6>Sign up for Viewr</h6>
         <ul>
           {errors.map((error) => (
             <li key={error}>{error}</li>
           ))}
         </ul>
         <label>
-          First Name
           <input
             type="text"
             value={fname}
             onChange={(e) => setFname(e.target.value)}
+            placeholder="First Name"
             required
           />
         </label>
         <label>
-          Last Name
           <input
             type="text"
             value={lname}
             onChange={(e) => setLname(e.target.value)}
+            placeholder="Last Name"
             required
           />
         </label>
         <label>
-          Username
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
             required
           />
         </label>
         <label>
-          Email
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email address"
             required
           />
         </label>
         <label>
-          Password
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <input className="auth-button" type="submit" value="Sign up"/>
+        <DemoLogin />
+        <div className="line"></div>
+        <p>
+          Already a Viewr member? <Link to="/login">Log in here.</Link>
+        </p>
       </form>
-      <DemoLogin />
     </>
   );
 };

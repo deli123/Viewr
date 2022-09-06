@@ -36,7 +36,7 @@ const DemoLogin = () => {
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <button onClick={handleSubmit}>Demo Login</button>
+      <input className="auth-button" onClick={handleSubmit} type="submit" value="Demo Login"/>
     </>
   );
 };

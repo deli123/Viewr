@@ -1,6 +1,5 @@
 import { Redirect, Route, Switch } from "react-router-dom";
-import LoginFormPage from "./views/LoginFormPage";
-import SignupFormPage from "./views/SignupFormPage";
+import AuthFormPage from "./views/AuthFormPage";
 import ExplorePage from "./views/ExplorePage";
 import SplashPage from "./views/SplashPage";
 
@@ -9,8 +8,8 @@ function App() {
     <>
       <Switch>
         <Route exact path="/" component={SplashPage} />
-        <Route exact path="/login" component={LoginFormPage} />
-        <Route exact path="/signup" component={SignupFormPage} />
+        <Route exact path="/login" component={AuthFormPage} />
+        <Route exact path="/signup" component={AuthFormPage} />
         <Route exact path="/explore" component={ExplorePage} />
         <Redirect to="/" />
       </Switch>

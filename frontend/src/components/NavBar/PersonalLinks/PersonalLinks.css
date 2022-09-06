@@ -4,3 +4,7 @@
   width: 180px;
   justify-content: space-evenly;
 }
+
+.personal-links li:hover {
+  scale: 1.1;
+}

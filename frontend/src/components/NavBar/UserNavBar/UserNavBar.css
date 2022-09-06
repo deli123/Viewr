@@ -1,0 +1,18 @@
+.user-nav-container {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  background-color: #101010;
+}
+
+.user-nav-buttons {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.user-links {
+  width: 178.25px;
+}

@@ -1,0 +1,10 @@
+.form-container {
+  display: block;
+  position: relative;
+}
+
+.form-container img {
+  height: calc(100vh - 48px);
+  min-height: 640px;
+  width: 100%;
+}

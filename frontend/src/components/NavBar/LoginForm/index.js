@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../../store/session";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import "./LoginForm.css";
-import NavBar from "../UserNavBar";
 import DemoLogin from "../DemoLogin";
 
 const LoginForm = () => {
@@ -37,34 +36,38 @@ const LoginForm = () => {
 
   return (
     <>
-      <NavBar />
-      <form onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h6>Log in to Viewr</h6>
         <ul>
           {errors.map((error) => (
             <li key={error}>{error}</li>
           ))}
         </ul>
         <label>
-          Email
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email address"
             required
           />
         </label>
         <label>
-          Password
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <input className="auth-button" type="submit" value="Sign in" />
+        <DemoLogin />
+        <div className="line"></div>
+        <p>
+          Not a Viewr member? <Link to="/signup">Sign up here.</Link>
+        </p>
       </form>
-      <DemoLogin />
     </>
   );
 };

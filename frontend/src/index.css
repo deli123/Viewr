@@ -139,9 +139,9 @@ a {
 }
 @font-face {
   font-family: "Proxima-Nova";
-  src: url(./fonts/Proxima\ Nova\ Font.otf);
+  src: url(../src/assets/fonts/Proxima\ Nova\ Font.otf);
 }
 @font-face {
   font-family: "Helvetica-Neue";
-  src: url(./fonts/Helvetica\ Neue\ LTW0697BlkCnObl.otf);
+  src: url(../src//assets//fonts/Helvetica\ Neue\ LTW0697BlkCnObl.otf);
 }

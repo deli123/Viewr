@@ -3,11 +3,11 @@ import { Redirect, Link } from "react-router-dom";
 import SplashNavBar from "../../components/NavBar/SplashNavBar";
 import "./SplashPage.css";
 import BackgroundSlider from "../../lib/BackgroundSlider";
-import splash1 from "../../assets/splash1.jpg";
-import splash2 from "../../assets/splash2.jpg";
-import splash3 from "../../assets/splash3.jpg";
-import splash4 from "../../assets/splash4.jpg";
-import splash5 from "../../assets/splash5.jpg";
+import splash1 from "../../assets/images/splash1.jpg";
+import splash2 from "../../assets/images/splash2.jpg";
+import splash3 from "../../assets/images/splash3.jpg";
+import splash4 from "../../assets/images/splash4.jpg";
+import splash5 from "../../assets/images/splash5.jpg";
 import Footer from "../../components/Footer";
 
 const SplashPage = () => {

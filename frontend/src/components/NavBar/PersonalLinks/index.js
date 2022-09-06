@@ -5,8 +5,8 @@ import { ImMail } from "react-icons/im";
 const PersonalLinks = () => {
   return (
     <>
-      <ul class="personal-links">
-        <li id="git-logo">
+      <ul className="personal-links">
+        <li>
           <a href="https://github.com/deli123">
             <FaGithub fontSize={"30px"} color={"white"} />
           </a>
