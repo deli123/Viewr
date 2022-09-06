@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import "./LoginForm.css";
 import DemoLogin from "../DemoLogin";
+import logo from "../../../assets/images/logo.png";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const LoginForm = () => {
   return (
     <>
       <form className="auth-form" onSubmit={handleSubmit}>
+        <img alt="logo" src={logo} />
         <h6>Log in to Viewr</h6>
         <ul>
           {errors.map((error) => (
@@ -63,7 +65,7 @@ const LoginForm = () => {
         </label>
         <input className="auth-button" type="submit" value="Sign in" />
         <DemoLogin />
-        <div className="line"></div>
+        <div className="line-separator"></div>
         <p>
           Not a Viewr member? <Link to="/signup">Sign up here.</Link>
         </p>

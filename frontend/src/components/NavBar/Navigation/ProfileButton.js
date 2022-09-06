@@ -32,7 +32,7 @@ const ProfileButton = ({ user }) => {
   return (
     <>
       <button onClick={openMenu}>
-        <FaUserCircle />
+        <FaUserCircle fontSize={"30px"}  />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">

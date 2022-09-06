@@ -27,8 +27,10 @@ const Navigation = () => {
 
   return (
     <>
-      <HomeButton />
-      <PersonalLinks/>
+      <div className="splash-home-button">
+        <HomeButton />
+      </div>
+      <PersonalLinks />
       <ul className="session-links">
         <li>{sessionLinks}</li>
       </ul>

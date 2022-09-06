@@ -13,6 +13,39 @@
   justify-content: space-between;
 }
 
+.home-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+}
+
+.you-explore {
+  color: whitesmoke;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.you-explore:hover {
+  opacity: 0.7;
+}
+
 .user-links {
-  width: 178.25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30%;
+}
+
+.photo-index {
+  margin: auto;
+  width: 80%;
+}
+
+.photo-index h3 {
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 24px;
+  margin-bottom: 5px;
+  color: #484848;
 }

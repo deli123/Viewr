@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
 import DemoLogin from "../DemoLogin";
+import logo from "../../../assets/images/logo.png";
 
 const SignupForm = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const SignupForm = () => {
   return (
     <>
       <form className="auth-form" onSubmit={handleSubmit}>
+        <img alt="logo" src={logo} />
         <h6>Sign up for Viewr</h6>
         <ul>
           {errors.map((error) => (
@@ -89,9 +91,9 @@ const SignupForm = () => {
             required
           />
         </label>
-        <input className="auth-button" type="submit" value="Sign up"/>
+        <input className="auth-button" type="submit" value="Sign up" />
         <DemoLogin />
-        <div className="line"></div>
+        <div className="line-separator"></div>
         <p>
           Already a Viewr member? <Link to="/login">Log in here.</Link>
         </p>

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import Navigation from "../../components/NavBar/Navigation";
+import NavBar from "../../components/NavBar/UserNavBar";
 
 const ExplorePage = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -8,8 +8,10 @@ const ExplorePage = () => {
 
   return (
     <>
-      <h1>Explore Page</h1>
-      <Navigation />
+      <NavBar />
+      <div className="photo-index">
+        <h3>Explore</h3>
+      </div>
     </>
   );
 };

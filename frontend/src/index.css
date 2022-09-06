@@ -137,6 +137,15 @@ a {
   font-family: Proxima-Nova, Helvetica-Neue, Helvetica, Arial, sans-serif;
   color: #101010;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Proxima-Nova, Helvetica-Neue, Helvetica, Arial, sans-serif;
+}
 @font-face {
   font-family: "Proxima-Nova";
   src: url(../src/assets/fonts/Proxima\ Nova\ Font.otf);

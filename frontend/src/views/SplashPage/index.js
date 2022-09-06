@@ -27,8 +27,8 @@ const SplashPage = () => {
         <div className="middle-text">
           <h1>Find your inspiration.</h1>
           <h3>
-            Join the Viewr community, home to tens of billions of photos and 2
-            million groups.
+            Join the Viewr community, home to tens of billions of imaginary
+            photos and zero groups.
           </h3>
           <Link className="start-button" to="/signup">
             Start for free
