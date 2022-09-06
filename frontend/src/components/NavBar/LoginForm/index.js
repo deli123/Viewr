@@ -63,7 +63,7 @@ const LoginForm = () => {
             required
           />
         </label>
-        <input className="auth-button" type="submit" value="Sign in" />
+        <input className="auth-button button-separator" type="submit" value="Sign in" />
         <DemoLogin />
         <div className="line-separator"></div>
         <p>

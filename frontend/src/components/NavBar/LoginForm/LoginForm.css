@@ -22,7 +22,7 @@
 }
 
 .auth-form input {
-  width: 270px;
+  width: 302px;
   justify-content: center;
   align-items: center;
   font-size: 16px;
@@ -34,6 +34,7 @@
   box-sizing: border-box;
   margin-top: 0.5rem;
   font-family: Proxima-Nova;
+  height: 55px;
 }
 
 .auth-form h6 {
@@ -54,13 +55,20 @@
   color: #006dac;
 }
 
-.auth-button {
+input.auth-button {
   background-color: #128fdc;
-  font-weight: 600 !important;
-  color: white !important;
-  font-size: 14px !important;
-  border: none !important;
-  font-family: Helvetica, sans-serif !important;
+  font-weight: 600;
+  color: white;
+  font-size: 14px;
+  border: none;
+  font-family: Helvetica, sans-serif;
+  height: 40px;
+  line-height: 50%;
+  /* padding-top: 8px; */
+}
+
+input.button-separator {
+  margin-top: 32px;
 }
 
 .auth-button:hover {

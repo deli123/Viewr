@@ -4,6 +4,7 @@
 }
 
 .form-container img {
+  display: block;
   height: calc(100vh - 48px);
   min-height: 640px;
   width: 100%;

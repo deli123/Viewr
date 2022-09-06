@@ -91,7 +91,7 @@ const SignupForm = () => {
             required
           />
         </label>
-        <input className="auth-button" type="submit" value="Sign up" />
+        <input className="auth-button button-separator" type="submit" value="Sign up" />
         <DemoLogin />
         <div className="line-separator"></div>
         <p>
