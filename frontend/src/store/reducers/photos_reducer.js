@@ -37,7 +37,7 @@ export const fetchPhotos = () => async (dispatch) => {
 };
 
 export const fetchPhoto = (photoId) => async (dispatch) => {
-  const res = await fetch(`/api/reports/${photoId}`);
+  const res = await fetch(`/api/photos/${photoId}`);
 
   if (res.ok) {
     const photo = await res.json();

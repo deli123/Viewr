@@ -13,10 +13,13 @@ ApplicationRecord.transaction do
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
   User.destroy_all
+  Photo.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
-  ApplicationRecord.connection.reset_pk_sequence!("users photos")
+  ActiveRecord::Base.connection.tables.each do |t|
+    ActiveRecord::Base.connection.reset_pk_sequence!(t)
+  end
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -90,29 +93,9 @@ ApplicationRecord.transaction do
   file = URI.open("#{path}photo7.jpg")
   photo7.photo.attach(io: file, filename: 'photo7.jpg')
 
-  photo8 = Photo.create!(title: "", description: "", user_id: user1.id)
-  file = URI.open("#{path}photo8.jpg")
-  photo8.photo.attach(io: file, filename: 'photo8.jpg')
-
-  photo9 = Photo.create!(title: "", description: "", user_id: user1.id)
-  file = URI.open("#{path}photo9.jpg")
-  photo9.photo.attach(io: file, filename: 'photo9.jpg')
-
   photo10 = Photo.create!(title: "", description: "", user_id: user1.id)
   file = URI.open("#{path}photo10.jpg")
   photo10.photo.attach(io: file, filename: 'photo10.jpg')
-
-  photo11 = Photo.create!(title: "", description: "", user_id: user2.id)
-  file = URI.open("#{path}photo11.jpg")
-  photo11.photo.attach(io: file, filename: 'photo11.jpg')
-
-  photo12 = Photo.create!(title: "", description: "", user_id: user2.id)
-  file = URI.open("#{path}photo12.jpg")
-  photo12.photo.attach(io: file, filename: 'photo12.jpg')
-
-  photo13 = Photo.create!(title: "", description: "", user_id: user2.id)
-  file = URI.open("#{path}photo13.jpg")
-  photo13.photo.attach(io: file, filename: 'photo13.jpg')
 
   photo14 = Photo.create!(title: "", description: "", user_id: user2.id)
   file = URI.open("#{path}photo14.jpg")
@@ -126,10 +109,6 @@ ApplicationRecord.transaction do
   file = URI.open("#{path}photo16.jpg")
   photo16.photo.attach(io: file, filename: 'photo16.jpg')
 
-  photo17 = Photo.create!(title: "", description: "", user_id: user3.id)
-  file = URI.open("#{path}photo17.jpg")
-  photo17.photo.attach(io: file, filename: 'photo17.jpg')
-
   photo18 = Photo.create!(title: "", description: "", user_id: user3.id)
   file = URI.open("#{path}photo18.jpg")
   photo18.photo.attach(io: file, filename: 'photo18.jpg')
@@ -137,10 +116,6 @@ ApplicationRecord.transaction do
   photo19 = Photo.create!(title: "", description: "", user_id: user3.id)
   file = URI.open("#{path}photo19.jpg")
   photo19.photo.attach(io: file, filename: 'photo19.jpg')
-
-  photo20 = Photo.create!(title: "", description: "", user_id: user3.id)
-  file = URI.open("#{path}photo20.jpg")
-  photo20.photo.attach(io: file, filename: 'photo20.jpg')
 
   puts "Done!"
 end

@@ -1,0 +1,11 @@
+.show-container {
+  height: 700px;
+  background-color: #212124;
+  padding: 50px 0 50px 0;
+}
+
+.show-container img {
+  display: block;
+  margin: auto;
+  height: 100%;
+}

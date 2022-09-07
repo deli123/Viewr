@@ -1,0 +1,13 @@
+.explore-container {
+  display: block;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+
+.explore-container h3 {
+  font-size: 24px;
+  line-height: 30px;
+  color: dimgray;
+  margin: 1em 0 0.5em 0;
+}
