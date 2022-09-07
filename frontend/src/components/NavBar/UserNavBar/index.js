@@ -17,8 +17,12 @@ const NavBar = () => {
             <HomeButton />
             {sessionUser ? (
               <>
-                <Link className="you-explore" to="/explore">You</Link>
-                <Link className="you-explore" to="/explore">Explore</Link>
+                <Link className="you-explore" to="/explore">
+                  You
+                </Link>
+                <Link className="you-explore" to="/explore">
+                  Explore
+                </Link>
               </>
             ) : (
               ""
@@ -28,7 +32,9 @@ const NavBar = () => {
           <div className="user-links">
             {sessionUser ? (
               <>
-                <FaCloudUploadAlt fontSize={"30px"} color={"white"} />
+                <Link to="/photos/upload">
+                  <FaCloudUploadAlt fontSize={"30px"} color={"white"} />
+                </Link>
                 <ProfileButton user={sessionUser} />
               </>
             ) : (
