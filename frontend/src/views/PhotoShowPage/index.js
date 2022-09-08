@@ -6,13 +6,16 @@ import { fetchPhoto, getPhoto } from "../../store/reducers/photos_reducer";
 import { getAuthor } from "../../store/reducers/users_reducer";
 import { CgProfile } from "react-icons/cg";
 import { ImArrowLeft2 } from "react-icons/im";
+import { getComments } from "../../store/reducers/comments_reducer";
 import "./PhotoShowPage.css";
+import CommentIndex from "../../components/Comments/CommentIndex";
 
 const PhotoShowPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const photo = useSelector(getPhoto(id));
   const user = useSelector(getAuthor);
+  const comments = useSelector(getComments);
 
   useEffect(() => {
     dispatch(fetchPhoto(id));
@@ -39,7 +42,7 @@ const PhotoShowPage = () => {
               <p>{photo.description}</p>
             </div>
           )}
-          <div className="comments-container">Comments here</div>
+          {user && comments && <CommentIndex comments={comments} photoId={photo.id}/>}
         </div>
       </div>
     </>

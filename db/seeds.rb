@@ -199,5 +199,9 @@ ApplicationRecord.transaction do
   file = URI.open("#{path}photo19.jpg")
   photo19.photo.attach(io: file, filename: "photo19.jpg")
 
+  comment1 = Comment.create!(body: "test", author_id: demo.id, photo_id: photo1.id)
+  comment2 = Comment.create!(body: "test1", author_id: demo.id, photo_id: photo1.id)
+  comment3 = Comment.create!(body: "test2", author_id: demo.id, photo_id: photo2.id)
+
   puts "Done!"
 end

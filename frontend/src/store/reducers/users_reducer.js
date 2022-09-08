@@ -32,7 +32,7 @@ export const getUser = (userId) => (state) => {
 export const getAuthor = (state) => {
   if (state.entities.users) return Object.values(state.entities.users)[0];
   return null;
-}
+};
 
 // THUNK ACTION CREATORS
 export const fetchUsers = () => async (dispatch) => {
@@ -65,8 +65,8 @@ const usersReducer = (state = {}, action) => {
       return nextState;
     case RECEIVE_PHOTO:
       const id = action.photo.user.id;
-       return {[id]: action.photo.user}
-  
+      return { [id]: action.photo.user };
+
     default:
       return nextState;
   }

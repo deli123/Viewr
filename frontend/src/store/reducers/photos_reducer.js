@@ -70,7 +70,7 @@ const photosReducer = (state = {}, action) => {
       nextState[action.photo.photo.id] = action.photo.photo;
       return nextState;
     default:
-      return state;
+      return nextState;
   }
 };
 
