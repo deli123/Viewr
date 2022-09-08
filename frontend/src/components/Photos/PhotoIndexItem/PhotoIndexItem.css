@@ -2,4 +2,22 @@
   margin-right: 5px;
   margin-bottom: 5px;
   height: 240px;
+  /* position: relative;
+  display: flex;
+  align-items: flex-end;
+  transition: .6s ease-out; */
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); */
+}
+
+.photo-index-item:hover {
+  transform: translateY((15px));
+}
+
+.photo-index-item:hover:before {
+  opacity: 1;
+}
+
+.photo-index-item-container {
+  display: flex;
+  flex-wrap: wrap;
 }

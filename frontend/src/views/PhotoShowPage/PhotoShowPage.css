@@ -1,5 +1,6 @@
 .show-container {
-  height: 700px;
+  height: 70vh;
+  max-height: 700px;
   background-color: #212124;
   padding: 50px 0 50px 0;
 }
@@ -8,4 +9,23 @@
   display: block;
   margin: auto;
   height: 100%;
+}
+
+.show-left-half {
+  width: 50%;
+}
+
+.show-attributes {
+  display: flex;
+  max-width: 60vw;
+  margin: 0 auto 0 auto;
+}
+
+.show-user-profile {
+  display: flex;
+  padding-top: 26px;
+}
+
+.show-caption {
+  display: block;
 }

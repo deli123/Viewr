@@ -65,12 +65,12 @@ const photosReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_PHOTOS:
-        return {...nextState, ...action.photos}
+      return { ...nextState, ...action.photos };
     case RECEIVE_PHOTO:
-      nextState[action.photo.id] = action.photo;
+      nextState[action.photo.photo.id] = action.photo.photo;
       return nextState;
     default:
-      return nextState;
+      return state;
   }
 };
 
