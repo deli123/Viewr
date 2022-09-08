@@ -16,9 +16,10 @@ const PhotoIndex = () => {
   return (
     <>
       <div className="photo-index">
-        {photos && photos.map((photo) => (
-          <PhotoIndexItem photo={photo} key={photo.id} />
-        ))}
+        {photos &&
+          photos.map((photo) => (
+            <PhotoIndexItem photo={photo} key={photo.id} />
+          ))}
       </div>
     </>
   );

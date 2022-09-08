@@ -29,6 +29,11 @@ export const getUser = (userId) => (state) => {
   return null;
 };
 
+export const getAuthor = (state) => {
+  if (state.entities.users) return Object.values(state.entities.users)[0];
+  return null;
+}
+
 // THUNK ACTION CREATORS
 export const fetchUsers = () => async (dispatch) => {
   const res = await fetch(`/api/users`);

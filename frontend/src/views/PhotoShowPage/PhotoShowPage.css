@@ -3,6 +3,26 @@
   max-height: 700px;
   background-color: #212124;
   padding: 50px 0 50px 0;
+  position: relative;
+}
+
+.link-explore a {
+  color: white;
+  font-size: 14px;
+  left: 20px;
+  top: 18px;
+  position: absolute;
+  z-index: 108;
+}
+
+.link-explore a:hover {
+  text-decoration: underline;
+}
+
+.left-arrow {
+  transform: translateY(20%);
+  font-size: 16px;
+  padding-right: 7px;
 }
 
 .show-container img {
@@ -24,6 +44,29 @@
 .show-user-profile {
   display: flex;
   padding-top: 26px;
+}
+
+.show-user-profile a {
+  color: #212124;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 5px;
+  line-height: 1;
+  position: relative;
+  top: 5px;
+}
+
+.show-user-profile h1 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 10px;
+  min-height: 18px;
+  text-align: end;
+}
+
+.show-user-profile a:hover {
+  text-decoration: underline;
 }
 
 .show-caption {
