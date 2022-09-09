@@ -1,6 +1,6 @@
 .show-container {
   height: 70vh;
-  max-height: 700px;
+  max-height: 800px;
   background-color: #212124;
   padding: 50px 0 50px 0;
   position: relative;
@@ -37,13 +37,14 @@
 
 .show-attributes {
   display: flex;
-  max-width: 60vw;
+  width: 55vw;
   margin: 0 auto 0 auto;
+  min-height: 55px;
 }
 
 .show-user-profile {
-  display: flex;
   padding-top: 26px;
+  display: flex;
 }
 
 .show-user-profile a {
@@ -54,21 +55,41 @@
   line-height: 1;
   position: relative;
   top: 5px;
+  padding-bottom: 4px;
 }
 
 .show-user-profile h1 {
+  color: #212124;
+  word-wrap: break-word;
   font-size: 16px;
   font-weight: 600;
   line-height: 18px;
-  margin-bottom: 10px;
+  margin: 20px 0 10px 0;
+  padding-left: 5px;
   min-height: 18px;
-  text-align: end;
 }
 
 .show-user-profile a:hover {
   text-decoration: underline;
 }
 
-.show-caption {
-  display: block;
+.profile-pic {
+  height: 100%;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.photo-details p {
+  color: #212124;
+  padding-left: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.comment-line-separator {
+  background-color: #cfd6d9;
+  height: 0.1px;
+  padding-left: 5px;
+  margin: 20px 0 20px 75px;
 }

@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/login" component={AuthFormPage} />
         <Route exact path="/signup" component={AuthFormPage} />
         <Route exact path="/explore" component={ExplorePage} />
-        <Route exact path="/photos/:id" component={PhotoShowPage} />
+        <Route exact path="/photos/:photoId" component={PhotoShowPage} />
         <Route exact path="/photos/upload" component={PhotoFormPage} />
         <Redirect to="/" />
       </Switch>

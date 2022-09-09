@@ -2,15 +2,15 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createComment } from "../../../store/reducers/comments_reducer";
-import { getAuthor } from "../../../store/reducers/users_reducer";
 
-const CommentsForm = ({photoId}) => {
+const CommentsForm = () => {
+  const { photoId } = useParams();
   const dispatch = useDispatch();
-  const user = useSelector(getAuthor);
+  const authorId = useSelector((state) => state.session.user.id);
 
   const payload = {
     body: "",
-    authorId: user.id,
+    authorId,
     photoId,
   };
 
@@ -19,6 +19,7 @@ const CommentsForm = ({photoId}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createComment(comment));
+    setComment(payload);
   };
 
   return (
@@ -26,7 +27,11 @@ const CommentsForm = ({photoId}) => {
       <form onSubmit={handleSubmit}>
         <input
           type="textarea"
-          onChange={(e) => setComment({...comment, body: e.currentTarget.value})}
+          value={comment.body}
+          onChange={(e) =>
+            setComment({ ...comment, body: e.target.value })
+          }
+          required
         />
         <button>Add Comment</button>
       </form>

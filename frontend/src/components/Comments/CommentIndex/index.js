@@ -1,15 +1,15 @@
 import CommentsForm from "../CommentsForm";
 import CommentIndexItem from "../CommentIndexItem";
-import "./CommentIndex.css"
+import "./CommentIndex.css";
 
-const CommentIndex = ({ comments, photoId }) => {
+const CommentIndex = ({ comments }) => {
   return (
     <>
       <div className="comments-container">
         {comments.map((comment) => (
-          <CommentIndexItem comment={comment} />
+          <CommentIndexItem key={comment.id} comment={comment} />
         ))}
-        <CommentsForm photoId={photoId}/>
+        <CommentsForm />
       </div>
     </>
   );

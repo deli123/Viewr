@@ -3,21 +3,27 @@ import { RECEIVE_PHOTO } from "./photos_reducer";
 
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 // ACTIONS
-export const receiveComments = (comments) => {
+const receiveComments = (comments) => {
   return {
     type: RECEIVE_COMMENTS,
     comments,
   };
 };
 
-export const receiveComment = (comment) => {
+const receiveComment = (comment) => {
   return {
     type: RECEIVE_COMMENT,
     comment,
   };
 };
+
+const removeComment = commentId => ({
+  type: REMOVE_COMMENT,
+  commentId
+});
 
 // SELECTORS
 export const getComments = (state) => {
@@ -49,14 +55,13 @@ export const fetchComment = (commentId) => async (dispatch) => {
 };
 
 export const createComment = (commentData) => async (dispatch) => {
-  console.log(commentData)
   const res = await csrfFetch(`/api/comments`, {
     method: "POST",
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     },
-    body: JSON.stringify(commentData)
+    body: JSON.stringify({comment: commentData})
   });
 
   if (res.ok) {
@@ -65,15 +70,45 @@ export const createComment = (commentData) => async (dispatch) => {
   }
 };
 
+export const editComment = (commentData) => async (dispatch) => {
+  const res = await csrfFetch(`/api/comments`, {
+    method: "PATCH",
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    },
+    body: JSON.stringify({comment: commentData})
+  });
+
+  if (res.ok) {
+    const comment = await res.json();
+    dispatch(receiveComment(comment));
+  }
+};
+
+export const deleteComment = (commentId) => async(dispatch) => {
+  const res = await csrfFetch(`/api/comments/${commentId}`, {
+    method: "DELETE",
+  });
+
+  if (res.ok) {
+    dispatch(removeComment(commentId));
+    return res;
+  }
+
+}
+
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);
   const nextState = { ...state };
-
   switch (action.type) {
     case RECEIVE_COMMENTS:
       return { ...nextState, ...action.comments };
     case RECEIVE_COMMENT:
       nextState[action.comment.comment.id] = action.comment.comment;
+      return nextState;
+    case REMOVE_COMMENT:
+      delete nextState[action.commentId];
       return nextState;
     case RECEIVE_PHOTO:
       return action.photo.comments;

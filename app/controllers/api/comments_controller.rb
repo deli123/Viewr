@@ -1,8 +1,5 @@
 class Api::CommentsController < ApplicationController
-    def show
-        @comment = Comment.find(params[:id])
-        render :show
-    end
+    wrap_parameters include: Comment.attribute_names
 
     def create
         @comment = Comment.new(comment_params)
@@ -12,6 +9,17 @@ class Api::CommentsController < ApplicationController
             render json: @comment.errors.full_messages, status: 422
         end
     end
+
+    def destroy
+        author = User.find(current_user.id)
+        @comment = author.comments.find(params[:id])
+        unless @comment
+          render json: { message: 'Unauthorized' }, status: :unauthorized
+          return
+        end
+        @comment.destroy
+        render :show
+      end
 
     private
 
