@@ -203,5 +203,9 @@ ApplicationRecord.transaction do
   comment2 = Comment.create!(body: "test1", author_id: demo.id, photo_id: photo1.id)
   comment3 = Comment.create!(body: "test2", author_id: demo.id, photo_id: photo2.id)
 
+  comment4 = Comment.create!(body: "hahaha", author_id: user1.id, photo_id: photo1.id)
+  comment5 = Comment.create!(body: "you cant delete me", author_id: user1.id, photo_id: photo1.id)
+  comment6 = Comment.create!(body: "lalala", author_id: user1.id, photo_id: photo2.id)
+
   puts "Done!"
 end

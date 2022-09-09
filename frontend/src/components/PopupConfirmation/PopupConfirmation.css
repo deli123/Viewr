@@ -1,0 +1,90 @@
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.popup-message {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 185px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
+  box-sizing: border-box;
+  width: 600px;
+  max-width: 1200px;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 20px 16px;
+}
+
+.popup-title {
+  color: #212124;
+  word-wrap: break-word;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.popup-question {
+  color: #212124;
+  font-size: 14px;
+  min-height: 60px;
+  overflow-y: auto;
+  padding: 0 20px 20px;
+}
+
+.popup-close-button {
+  cursor: pointer;
+  margin-right: 4px;
+  opacity: 0.5;
+  background-color: transparent;
+  border: none;
+}
+
+.popup-buttons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  padding: 0 20px;
+}
+
+.popup-buttons button {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 7px;
+  height: 29px;
+  width: 13.3vw;
+  max-width: 80px;
+  align-items: center;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  padding: 10px;
+  margin-right: 4px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.confirm-button {
+  background: #128fdc;
+}
+
+.cancel-button {
+  background: #979ea2;
+}

@@ -11,8 +11,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        author = User.find(current_user.id)
-        @comment = author.comments.find(params[:id])
+        @comment = Comment.find(params[:id])
         unless @comment
           render json: { message: 'Unauthorized' }, status: :unauthorized
           return
