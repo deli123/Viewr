@@ -15,12 +15,29 @@ const CommentsForm = () => {
   };
 
   const [comment, setComment] = useState(payload);
+  const [showButton, setShowButton] = useState(false);
+
+  const handleFocus = (e) => {
+    e.stopPropagation();
+    if (e.currentTarget === e.target) {
+      setShowButton(true);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createComment(comment));
     setComment(payload);
+    setShowButton(false);
   };
+
+  document.addEventListener("click", function handleClickOutsideBox(event) {
+    const box = document.querySelector(".box");
+
+    if (!box.contains(event.target)) {
+      setShowButton(false);
+    }
+  });
 
   return (
     <>
@@ -28,12 +45,12 @@ const CommentsForm = () => {
         <input
           type="textarea"
           value={comment.body}
-          onChange={(e) =>
-            setComment({ ...comment, body: e.target.value })
-          }
+          onChange={(e) => setComment({ ...comment, body: e.target.value })}
           required
+          placeholder="Add a comment"
+          onClick={handleFocus}
         />
-        <button>Add Comment</button>
+        {showButton && <button className="box">Add Comment</button>}
       </form>
     </>
   );

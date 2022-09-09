@@ -34,6 +34,7 @@ const PhotoShowPage = () => {
         </div>
         {photo && <img src={photo.photoUrl} alt={photo.title} />}
       </div>
+      <div className="bottom-half">
       <div className="show-attributes">
         <div className="show-left-half">
           {user && (
@@ -51,6 +52,7 @@ const PhotoShowPage = () => {
           <div className="comment-line-separator"></div>
           {user && comments && <CommentIndex comments={comments} />}
         </div>
+      </div>
       </div>
     </>
   );

@@ -1,4 +1,41 @@
 .comment {
+    display: flex;
     margin: 5px;
+    min-height: 32px;
+    overflow: hidden;
+    padding: 5px 0 5px 20px;
     border: 1px solid black;
+    transition: background-color 0.15s ease-in-out;
+    box-sizing: border-box;
+    color: #212124;
+}
+
+.comment:hover {
+    border-radius: 2px;
+}
+
+.comment-author-pic {
+    height: 100%;
+    width: 32px;
+    margin-right: 15px;
+}
+
+.comment-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-header a {
+    color: #006dac;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+
 }

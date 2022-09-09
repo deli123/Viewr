@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.bottom-half {
+  background-color: #f3f5f6;
+}
+
 .link-explore a {
   color: white;
   font-size: 14px;
