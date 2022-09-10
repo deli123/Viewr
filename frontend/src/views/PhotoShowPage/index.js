@@ -35,24 +35,28 @@ const PhotoShowPage = () => {
         {photo && <img src={photo.photoUrl} alt={photo.title} />}
       </div>
       <div className="bottom-half">
-      <div className="show-attributes">
-        <div className="show-left-half">
-          {user && (
-            <div className="show-user-profile">
-              <div className="profile-pic">
-                <CgProfile fontSize={"60px"} />
+        <div className="show-attributes">
+          <div className="show-left-half">
+            {user && (
+              <div className="show-user-profile">
+                <div className="profile-pic">
+                  <CgProfile fontSize={"60px"} />
+                </div>
+                <div className="photo-details">
+                  <Link to="#">{`${user.fname} ${user.lname}`}</Link>
+                  {photo && (
+                    <>
+                      <h1>{photo.title}</h1>
+                      <p>{photo.description}</p>
+                    </>
+                  )}
+                </div>
               </div>
-              <div className="photo-details">
-                <Link to="#">{`${user.fname} ${user.lname}`}</Link>
-                <h1>{photo.title}</h1>
-                <p>{photo.description}</p>
-              </div>
-            </div>
-          )}
-          <div className="comment-line-separator"></div>
-          {user && comments && <CommentIndex comments={comments} />}
+            )}
+            <div className="comment-line-separator"></div>
+            {user && comments && <CommentIndex comments={comments} />}
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

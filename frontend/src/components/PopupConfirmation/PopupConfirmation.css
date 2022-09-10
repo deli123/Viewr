@@ -81,6 +81,10 @@
   cursor: pointer;
 }
 
+.popup-buttons button:hover {
+  box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.1);
+}
+
 .confirm-button {
   background: #128fdc;
 }

@@ -20,9 +20,9 @@ const receiveComment = (comment) => {
   };
 };
 
-const removeComment = commentId => ({
+const removeComment = (commentId) => ({
   type: REMOVE_COMMENT,
-  commentId
+  commentId,
 });
 
 // SELECTORS
@@ -58,10 +58,10 @@ export const createComment = (commentData) => async (dispatch) => {
   const res = await csrfFetch(`/api/comments`, {
     method: "POST",
     headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    body: JSON.stringify({comment: commentData})
+    body: JSON.stringify({ comment: commentData }),
   });
 
   if (res.ok) {
@@ -74,10 +74,10 @@ export const editComment = (commentData) => async (dispatch) => {
   const res = await csrfFetch(`/api/comments/${commentData.id}`, {
     method: "PATCH",
     headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    body: JSON.stringify({comment: commentData})
+    body: JSON.stringify({ comment: commentData }),
   });
 
   if (res.ok) {
@@ -86,7 +86,7 @@ export const editComment = (commentData) => async (dispatch) => {
   }
 };
 
-export const deleteComment = (commentId) => async(dispatch) => {
+export const deleteComment = (commentId) => async (dispatch) => {
   const res = await csrfFetch(`/api/comments/${commentId}`, {
     method: "DELETE",
   });
@@ -95,8 +95,7 @@ export const deleteComment = (commentId) => async(dispatch) => {
     dispatch(removeComment(commentId));
     return res;
   }
-
-}
+};
 
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);

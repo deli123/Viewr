@@ -8,6 +8,7 @@
 
 .bottom-half {
   background-color: #f3f5f6;
+  padding-bottom: 5vh;
 }
 
 .link-explore a {
@@ -36,6 +37,7 @@
 
 .show-left-half {
   width: 50%;
+  min-width: 300px;
 }
 
 .show-attributes {

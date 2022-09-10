@@ -1,0 +1,30 @@
+.comment-form {
+  display: flex;
+  width: 100%;
+  margin: 5px;
+  min-height: 32px;
+  padding: 5px 0 5px 10px;
+  margin-left: 20px;
+  transition: background-color 0.15s ease-in-out;
+  box-sizing: border-box;
+  color: #212124;
+}
+
+.comment-form form {
+  width: 100%;
+}
+
+.comment-form textarea {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  border-radius: 3px;
+  resize: none;
+  border: 0.5px solid dimgray;
+  overflow: auto;
+  min-height: 48px;
+}

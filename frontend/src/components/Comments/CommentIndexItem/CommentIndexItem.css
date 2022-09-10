@@ -1,41 +1,101 @@
 .comment {
-    display: flex;
-    margin: 5px;
-    min-height: 32px;
-    overflow: hidden;
-    padding: 5px 0 5px 20px;
-    border: 1px solid black;
-    transition: background-color 0.15s ease-in-out;
-    box-sizing: border-box;
-    color: #212124;
+  display: flex;
+  margin: 5px;
+  min-height: 32px;
+  padding: 5px 0 5px 10px;
+  margin-left: 20px;
+  transition: background-color 0.15s ease-in-out;
+  box-sizing: border-box;
+  color: #212124;
+  word-break: break-all;
+  font-size: 14px;
 }
 
 .comment:hover {
-    border-radius: 2px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .comment-author-pic {
-    height: 100%;
-    width: 32px;
-    margin-right: 15px;
+  height: 100%;
+  width: 32px;
+  margin-right: 15px;
 }
 
 .comment-details {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .comment-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
 }
 
 .comment-header a {
-    color: #006dac;
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 600;
+  color: #006dac;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
 
+.comment-buttons {
+  margin-right: 8px;
+}
+
+.comment-buttons button {
+  opacity: 0.5;
+  border: none;
+  background-color: none;
+}
+
+.comment-buttons button:hover {
+  opacity: 0.75;
+  background: none;
+}
+
+.comment textarea {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  border-radius: 3px;
+  resize: none;
+  border: 0.5px solid dimgray;
+  overflow: auto;
+}
+
+textarea:focus-visible {
+  outline: none;
+}
+
+.comment p {
+  padding-right: 8px;
+  margin-right: 8px;
+}
+
+.comment-form-button {
+  color: white;
+  background: #128fdc;
+  font-size: 16px;
+  font-weight: 600;
+  height: 32px;
+  margin-left: auto;
+  min-width: 100px;
+  transition: background 0.15s ease-in-out;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: none;
+  display: block;
+}
+
+.comment-form-button:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.1);
 }

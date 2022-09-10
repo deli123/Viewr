@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createComment } from "../../../store/reducers/comments_reducer";
+import { CgProfile } from "react-icons/cg";
+import "./CommentsForm.css";
 
 const CommentsForm = () => {
   const { photoId } = useParams();
@@ -31,27 +33,33 @@ const CommentsForm = () => {
     setShowButton(false);
   };
 
-  document.addEventListener("click", function handleClickOutsideBox(event) {
-    const box = document.querySelector(".box");
+  document.addEventListener("click", function handleClickOutside(event) {
+    const addButton = document.querySelector(".addButton");
 
-    if (!box.contains(event.target)) {
+    if (!addButton || !addButton.contains(event.target)) {
       setShowButton(false);
     }
   });
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="textarea"
-          value={comment.body}
-          onChange={(e) => setComment({ ...comment, body: e.target.value })}
-          required
-          placeholder="Add a comment"
-          onClick={handleFocus}
-        />
-        {showButton && <button className="box">Add Comment</button>}
-      </form>
+      <div className="comment-form">
+        <div className="comment-author-pic">
+          <CgProfile fontSize={"32px"} />
+        </div>
+        <form onSubmit={handleSubmit}>
+          <textarea
+            value={comment.body}
+            onChange={(e) => setComment({ ...comment, body: e.target.value })}
+            required
+            placeholder="Add a comment"
+            onClick={handleFocus}
+          />
+          {showButton && (
+            <button className="addButton comment-form-button">Comment</button>
+          )}
+        </form>
+      </div>
     </>
   );
 };
