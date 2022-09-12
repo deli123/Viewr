@@ -7,6 +7,5 @@
 .photo-form-sidebar {
   width: 240px;
   background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  max-width: 825px;
+  height: 80%;
 }

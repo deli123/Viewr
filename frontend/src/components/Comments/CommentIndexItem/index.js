@@ -35,6 +35,9 @@ const CommentIndexItem = ({ comment }) => {
   };
 
   const handleChange = (e) => {
+    e.target.style.height = "initial";
+    e.target.style.height = `${e.target.scrollHeight}px`;
+    e.target.style.height = `${Math.min(e.target.scrollHeight, 300)}px`;
     setBody(e.target.value);
   };
 
@@ -91,7 +94,7 @@ const CommentIndexItem = ({ comment }) => {
             <>
               <div>
                 <form>
-                  <textarea value={body} onChange={handleChange} />
+                  <textarea rows="4" value={body} onChange={handleChange} />
                   <button
                     className="comment-form-button"
                     onClick={handleSubmit}

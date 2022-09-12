@@ -110,8 +110,12 @@ const commentsReducer = (state = {}, action) => {
       delete nextState[action.commentId];
       return nextState;
     case RECEIVE_PHOTO:
-      return action.photo.comments;
-    default:
+      if (action.photo.comments) {
+        return action.photo.comments;
+      } else {
+        return null;
+      }        
+      default:
       return nextState;
   }
 };

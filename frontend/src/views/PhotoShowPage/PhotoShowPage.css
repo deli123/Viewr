@@ -38,6 +38,7 @@
 .show-left-half {
   width: 50%;
   min-width: 300px;
+  max-width: 500px;
 }
 
 .show-attributes {
@@ -97,4 +98,59 @@
   height: 0.1px;
   padding-left: 5px;
   margin: 20px 0 20px 75px;
+}
+
+.show-right-half {
+  width: 50%;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.photo-stats {
+  display: flex;
+  width: 100%;
+  padding-top: 26px;
+}
+
+.photo-stats-left {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.like-button {
+  display: block;
+  margin-left: auto;
+  width:fit-content;
+  padding: 6px;
+  margin-right: 6px;
+  margin-top: 6px;
+}
+
+.like-button:hover {
+  cursor: pointer;
+}
+
+.photo-stats h1 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.photo-stats-left span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #898989;
+}
+
+.photo-stats-date {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.photo-stats-separator {
+  background-color: #cfd6d9;
+  height: 0.1px;
+  width: 90%;
+  margin: 20px 0 20px auto;
 }

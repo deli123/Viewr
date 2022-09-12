@@ -26,6 +26,13 @@ const CommentsForm = () => {
     }
   };
 
+  const handleChange = (e) => {
+    e.target.style.height = "initial";
+    e.target.style.height = `${e.target.scrollHeight}px`;
+    e.target.style.height = `${Math.min(e.target.scrollHeight, 300)}px`;
+    setComment({ ...comment, body: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createComment(comment));
@@ -49,8 +56,9 @@ const CommentsForm = () => {
         </div>
         <form onSubmit={handleSubmit}>
           <textarea
+            rows="4"
             value={comment.body}
-            onChange={(e) => setComment({ ...comment, body: e.target.value })}
+            onChange={handleChange}
             required
             placeholder="Add a comment"
             onClick={handleFocus}

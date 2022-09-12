@@ -55,7 +55,7 @@
 .popup-buttons {
   display: flex;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 0 20px;
 }
 

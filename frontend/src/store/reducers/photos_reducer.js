@@ -1,3 +1,6 @@
+import csrfFetch from "../csrf";
+import { RECEIVE_LIKE, REMOVE_LIKE } from "./likes_reducer";
+
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 
@@ -46,8 +49,9 @@ export const fetchPhoto = (photoId) => async (dispatch) => {
 };
 
 export const createPhoto = (photoData) => async (dispatch) => {
-  const res = await fetch(`/api/photos`, {
-    method: "post",
+  // debugger
+  const res = await csrfFetch(`/api/photos`, {
+    method: "POST",
     data: photoData,
     contentType: false,
     processData: false,
@@ -68,6 +72,18 @@ const photosReducer = (state = {}, action) => {
       return { ...nextState, ...action.photos };
     case RECEIVE_PHOTO:
       nextState[action.photo.photo.id] = action.photo.photo;
+      return nextState;
+    case RECEIVE_LIKE:
+      nextState[action.like.like.photoId].likes += 1;
+      nextState[action.like.like.photoId].liked = true;
+      nextState[action.like.like.photoId].likeId = action.like.like.id;
+      return nextState;
+    case REMOVE_LIKE:
+      // console.log(nextState[action.like.photoId])
+
+      nextState[action.like.photoId].likes -= 1;
+      nextState[action.like.photoId].liked = false;
+      delete nextState[action.like.photoId].likeId;
       return nextState;
     default:
       return nextState;

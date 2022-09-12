@@ -13,7 +13,7 @@ const ExplorePage = () => {
       <NavBar />
       <div className="explore-container">
         <h3>Explore</h3>
-        <PhotoIndex />
+        {sessionUser && <PhotoIndex />}
       </div>
     </>
   );

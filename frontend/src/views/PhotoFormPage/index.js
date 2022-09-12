@@ -1,11 +1,13 @@
-import PhotoForm from "../../components/PhotoForm";
+import NavBar from "../../components/NavBar/UserNavBar";
+import PhotoForm from "../../components/Photos/PhotoForm";
 
 const PhotoFormPage = () => {
-    return (
-        <>
-            <PhotoForm/>
-        </>
-    )
-}
+  return (
+    <>
+      <NavBar />
+      <PhotoForm />
+    </>
+  );
+};
 
 export default PhotoFormPage;

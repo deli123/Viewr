@@ -11,11 +11,12 @@
 }
 
 .comment-form form {
-  width: 100%;
+  width: calc(100% - 72px);
 }
 
 .comment-form textarea {
   width: 100%;
+  max-width: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 6px 10px;
@@ -26,5 +27,8 @@
   resize: none;
   border: 0.5px solid dimgray;
   overflow: auto;
-  min-height: 48px;
+}
+
+.comment-form textarea:focus-visible {
+  border: 1px solid #1372e8;
 }

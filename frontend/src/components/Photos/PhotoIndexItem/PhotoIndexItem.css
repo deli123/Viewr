@@ -2,10 +2,63 @@
   flex-grow: 1;
   margin-right: 5px;
   margin-bottom: 1px;
+  position: relative;
 }
 
 .photo-index-item img {
   height: 250px;
   width: 100%;
   object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  transition: all 0.15s ease-in-out;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  padding: 0 8px 8px;
+  width: 100%;
+}
+
+.overlay-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: absolute;
+  width: calc(100% - 16px);
+}
+
+.overlay-text-author h1 {
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 17px;
+}
+
+.overlay-text-author span {
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 11px;
+  transition: color 0.15s linear;
+}
+
+.overlay-fade {
+  height: 15%;
+  width: 100%;
+  top: 84%;
+}
+
+.photo-index-item:hover .image-overlay {
+  width: 100%;
+  opacity: 1;
+}
+
+.overlay-like-button {
+  display: flex;
+  align-items: center;
+}
+
+.explore-like-button {
+  cursor: pointer;
 }

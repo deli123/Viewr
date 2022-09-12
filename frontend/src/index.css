@@ -108,6 +108,8 @@ section {
 body {
   line-height: 1;
   font-family: Proxima-Nova, Helvetica-Neue, Helvetica, Arial, sans-serif;
+  background: #f3f5f6;
+  color: #212124;
 }
 ol,
 ul {
@@ -135,7 +137,7 @@ button {
 a {
   text-decoration: none;
   font-family: Proxima-Nova, Helvetica-Neue, Helvetica, Arial, sans-serif;
-  color: #101010;
+  color: #212124;
 }
 
 h1,
