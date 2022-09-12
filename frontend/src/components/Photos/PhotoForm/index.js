@@ -35,6 +35,7 @@ const PhotoForm = () => {
       console.log(pair[0] + ", " + pair[1]);
     }
 
+    // dispatch(createPhoto(formData));
     csrfFetch(`/api/photos`, {
       method: "POST",
       data: formData,

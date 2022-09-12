@@ -20,6 +20,12 @@ json.comments do
   end
 end
 
-json.likes do
-  json.extract! @likes, :count, :liked, :id, :photo_id
+json.likes { json.extract! @likes, :count, :liked, :id, :photo_id }
+
+json.tags do
+  @photo.tags.each do |tag|
+    json.set! tag.id do
+      json.extract! tag, :id, :body, :photo_id
+    end
+  end
 end

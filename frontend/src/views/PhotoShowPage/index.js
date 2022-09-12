@@ -15,6 +15,9 @@ import {
 } from "../../store/reducers/likes_reducer";
 import { formatDate } from "../../util/dateUtil";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { getTags } from "../../store/reducers/tags_reducer";
+import TagIndex from "../../components/Tags/TagIndex";
+import TagsForm from "../../components/Tags/TagsForm";
 import "./PhotoShowPage.css";
 
 const PhotoShowPage = () => {
@@ -27,13 +30,14 @@ const PhotoShowPage = () => {
   const user = useSelector(getAuthor);
   const comments = useSelector(getComments);
   const likes = useSelector(getLike);
+  const tags = useSelector(getTags);
   const sessionUser = useSelector((state) => state.session.user);
   if (!sessionUser) return <Redirect to="/login" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (likes.liked) {
-      dispatch(deleteLike({id: likes.id, photoId: likes.photoId}));
+      dispatch(deleteLike({ id: likes.id, photoId: likes.photoId }));
     } else {
       dispatch(createLike({ userId: sessionUser.id, photoId: photo.id }));
     }
@@ -82,7 +86,7 @@ const PhotoShowPage = () => {
                   <Link to="#">{`${user.fname} ${user.lname}`}</Link>
                   {photo && (
                     <>
-                      <h1>{photo.title}</h1>
+                      <h1>{`${photo.title}`}</h1>
                       <p>{photo.description}</p>
                     </>
                   )}
@@ -98,7 +102,7 @@ const PhotoShowPage = () => {
                 <div className="photo-stats-views">
                   {likes && (
                     <>
-                      <h1>{likes.count}</h1>
+                      <h1>{`${likes.count}`}</h1>
                       <span>faves</span>
                     </>
                   )}
@@ -106,7 +110,7 @@ const PhotoShowPage = () => {
                 <div className="photo-stats-comments">
                   {comments && (
                     <>
-                      <h1>{comments.length}</h1>
+                      <h1>{`${comments.length}`}</h1>
                       <span>comments</span>
                     </>
                   )}
@@ -114,11 +118,22 @@ const PhotoShowPage = () => {
               </div>
               <div className="photo-stats-right">
                 <div className="photo-stats-date">
-                  {photo && <span>Uploaded on {formatDate(photo.createdAt)}</span>}
+                  {photo && (
+                    <span>Uploaded on {formatDate(photo.createdAt)}</span>
+                  )}
                 </div>
               </div>
             </div>
             <div className="photo-stats-separator"></div>
+            <div className="tags-container">
+              {sessionUser && user && (
+                <TagsForm
+                  sessionUser={sessionUser.id}
+                  photoOwner={photo.userId}
+                />
+              )}
+              {tags && sessionUser && user && <TagIndex tags={tags} />}
+            </div>
           </div>
         </div>
       </div>

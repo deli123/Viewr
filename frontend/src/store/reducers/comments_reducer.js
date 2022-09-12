@@ -36,24 +36,6 @@ export const getComment = (commentId) => (state) => {
 };
 
 // THUNK ACTION CREATORS
-export const fetchComments = () => async (dispatch) => {
-  const res = await fetch(`/api/comments`);
-
-  if (res.ok) {
-    const comments = await res.json();
-    dispatch(receiveComments(comments));
-  }
-};
-
-export const fetchComment = (commentId) => async (dispatch) => {
-  const res = await fetch(`/api/comments/${commentId}`);
-
-  if (res.ok) {
-    const comment = await res.json();
-    dispatch(receiveComment(comment));
-  }
-};
-
 export const createComment = (commentData) => async (dispatch) => {
   const res = await csrfFetch(`/api/comments`, {
     method: "POST",

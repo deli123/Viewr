@@ -46,6 +46,7 @@
   width: 55vw;
   margin: 0 auto 0 auto;
   min-height: 55px;
+  justify-content: space-between;
 }
 
 .show-user-profile {
@@ -110,12 +111,13 @@
   display: flex;
   width: 100%;
   padding-top: 26px;
+  justify-content: space-between;
 }
 
 .photo-stats-left {
   display: flex;
-  width: 50%;
-  justify-content: space-evenly;
+  width: 40%;
+  justify-content: space-between;
 }
 
 .like-button {
@@ -151,6 +153,11 @@
 .photo-stats-separator {
   background-color: #cfd6d9;
   height: 0.1px;
-  width: 90%;
-  margin: 20px 0 20px auto;
+  width: 100%;
+  margin: 20px 0 20px 0;
+}
+
+.tags-container {
+  width: 50%;
+  height: 100%;
 }

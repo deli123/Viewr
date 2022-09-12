@@ -6,13 +6,6 @@ export const RECEIVE_LIKE = "RECEIVE_LIKE";
 export const REMOVE_LIKE = "REMOVE_LIKE";
 
 // ACTIONS
-const receiveLikes = (likes) => {
-  return {
-    type: RECEIVE_LIKES,
-    likes,
-  };
-};
-
 const receiveLike = (like) => {
   return {
     type: RECEIVE_LIKE,
@@ -32,24 +25,6 @@ export const getLike = (state) => {
 };
 
 // THUNK ACTION CREATORS
-export const fetchLikes = () => async (dispatch) => {
-  const res = await fetch(`/api/likes`);
-
-  if (res.ok) {
-    const likes = await res.json();
-    dispatch(receiveLikes(likes));
-  }
-};
-
-export const fetchLike = (likeId) => async (dispatch) => {
-  const res = await fetch(`/api/likes/${likeId}`);
-
-  if (res.ok) {
-    const like = await res.json();
-    dispatch(receiveLike(like));
-  }
-};
-
 export const createLike = (likeData) => async (dispatch) => {
   const res = await csrfFetch(`/api/likes`, {
     method: "POST",

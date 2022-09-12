@@ -1,17 +1,15 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: tags
 #
 #  id         :bigint           not null, primary key
-#  user_id    :bigint           not null
+#  body       :string           not null
 #  photo_id   :bigint           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Like < ApplicationRecord
-  validates :user_id, :photo_id, presence: true
+class Tag < ApplicationRecord
+  validates :body, :photo_id, presence: true
 
   belongs_to :photo
-
-  belongs_to :user
 end

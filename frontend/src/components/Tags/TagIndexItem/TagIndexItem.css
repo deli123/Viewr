@@ -1,0 +1,43 @@
+.tag-index-item {
+  display: block;
+  font-weight: 400;
+  line-height: 21px;
+  padding: 3px 10px 3px;
+  background-color: #cfd6d9;
+  border: none;
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+  float: left;
+  color: #212124;
+  position: relative;
+}
+
+.remove-tag-overlay {
+  position: absolute;
+  transform: all 0.15s ease-in-out;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.tag-index-item:hover .remove-tag-overlay {
+  opacity: 1;
+}
+
+.remove-tag {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.remove-tag:hover {
+  cursor: pointer;
+}
+
+.overlay-fade-tag {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
