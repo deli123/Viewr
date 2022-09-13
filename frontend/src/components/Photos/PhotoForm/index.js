@@ -61,7 +61,12 @@ const PhotoForm = () => {
                   setPhotoData({ ...photoData, description: e.target.value })
                 }
               />
-              <input type="file" onChange={handleFile} />
+              <input
+                type="file"
+                onChange={handleFile}
+                accept=".gif,.jpg,.jpeg,.png,.tiff,.raw"
+                required
+              />
               <button>Upload</button>
             </form>
           </div>

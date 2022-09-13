@@ -1,5 +1,6 @@
 class Api::PhotosController < ApplicationController
     wrap_parameters include: Photo.attribute_names + [:photo]
+    before_action :set_photo, only: [:show, :update]
 
     def index
         @photos = Photo.all
@@ -8,24 +9,31 @@ class Api::PhotosController < ApplicationController
     end
 
     def show
-        @photo = Photo.find(params[:id])
+        render :show
+    end
+
+    def create
+        @photo = Photo.new(photo_params)
         @likes = {
             count: @photo.likes.count,
             liked: Like.where("user_id = ? AND photo_id = ?", current_user.id, @photo.id).count != 0 ? true : false,
             id: Like.where("user_id = ? AND photo_id = ?", current_user.id, @photo.id).pluck(:id)[0],
             photo_id: @photo.id
         }
-        render :show
-    end
-
-    def create
-        @photo = Photo.new(photo_params)
         if @photo.save
             render :show
         else
             render json: @photo.errors.full_messages, status: 422
         end
     end
+
+    def update
+        if @photo.update(photo_params)
+            render :show
+        else
+          render json: @photo.errors.full_messages, status: :unprocessable_entity
+        end
+      end
 
     def destroy
         @photo = Photo.find(params[:id])
@@ -39,6 +47,16 @@ class Api::PhotosController < ApplicationController
     private
 
     def photo_params
-        params.require(:photo).permit(:title, :description, :user_id, :album_id, :photo)
+        params.require(:photo).permit(:id, :title, :description, :user_id, :album_id, :photo)
+    end
+
+    def set_photo
+        @photo = Photo.find(params[:id])
+        @likes = {
+            count: @photo.likes.count,
+            liked: Like.where("user_id = ? AND photo_id = ?", current_user.id, @photo.id).count != 0 ? true : false,
+            id: Like.where("user_id = ? AND photo_id = ?", current_user.id, @photo.id).pluck(:id)[0],
+            photo_id: @photo.id
+        }
     end
 end

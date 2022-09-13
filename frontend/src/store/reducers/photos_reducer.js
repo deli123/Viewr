@@ -1,5 +1,4 @@
 import csrfFetch from "../csrf";
-import { uploadFetch } from "../csrf";
 import { RECEIVE_LIKE, REMOVE_LIKE } from "./likes_reducer";
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
@@ -57,10 +56,14 @@ export const fetchPhoto = (photoId) => async (dispatch) => {
   }
 };
 
+// UPLOADING PHOTO
 export const createPhoto = (photoData) => async (dispatch) => {
-  const res = await uploadFetch(`/api/photos`, {
+  const res = await fetch(`/api/photos`, {
     method: "POST",
     body: photoData,
+    headers: {
+      'X-CSRF-Token': sessionStorage.getItem('X-CSRF-Token')
+    }
   });
 
   if (res.ok) {

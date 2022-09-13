@@ -21,6 +21,7 @@ import TagIndex from "../../components/Tags/TagIndex";
 import TagsForm from "../../components/Tags/TagsForm";
 import "./PhotoShowPage.css";
 import PopupConfirmation from "../../components/PopupConfirmation";
+import PhotoEditForm from "../../components/Photos/PhotoEditForm";
 
 const PhotoShowPage = () => {
   const { photoId } = useParams();
@@ -108,12 +109,9 @@ const PhotoShowPage = () => {
                 </div>
                 <div className="photo-details">
                   <Link to="#">{`${user.fname} ${user.lname}`}</Link>
-                  {photo && (
+                  {photo && sessionUser && user && (
                     <>
-                      <div>
-                        <h1>{`${photo.title}`}</h1>
-                        <p>{photo.description}</p>
-                      </div>
+                      <PhotoEditForm photo={photo}/>
                     </>
                   )}
                 </div>

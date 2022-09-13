@@ -58,7 +58,7 @@
   color: #212124;
   font-size: 20px;
   font-weight: 600;
-  padding-left: 5px;
+  padding-left: 1px;
   line-height: 1;
   position: relative;
   top: 5px;
@@ -84,6 +84,11 @@
   height: 100%;
   width: 60px;
   margin-right: 10px;
+}
+
+.photo-details {
+  width: 100%;
+  padding-left: 6px;
 }
 
 .photo-details p {

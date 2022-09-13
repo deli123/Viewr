@@ -33,6 +33,7 @@ const TagsForm = ({ sessionUser, photoOwner }) => {
               value={body}
               onChange={(e) => setBody(e.target.value)}
               placeholder="Add a tag"
+              required
             />
           </form>
         )}
