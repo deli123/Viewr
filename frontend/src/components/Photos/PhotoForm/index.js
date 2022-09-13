@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { createPhoto } from "../../../store/reducers/photos_reducer";
+import imageUpload from "../../../../src/assets/images/image-upload.svg";
 import "./PhotoForm.css";
 
 const PhotoForm = () => {
@@ -53,13 +54,18 @@ const PhotoForm = () => {
   return (
     <>
       <div className="photo-form-page">
-        <input
-          className="photo-form-file-input"
-          type="file"
-          onChange={handleFile}
-          accept=".gif,.jpg,.jpeg,.png,.tiff,.raw"
-          required
-        />
+        <div className="file-input-box">
+          <div className="file-input-box-label">
+            <img src={imageUpload} alt="upload-image" />
+            <p>Click here to add a file</p>
+          </div>
+          <input
+            type="file"
+            onChange={handleFile}
+            accept=".gif,.jpg,.jpeg,.png,.tiff,.raw"
+            required
+          />
+        </div>
         <div className="photo-form-sidebar">
           {showForm && (
             <div className="photo-form-title">

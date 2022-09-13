@@ -2,6 +2,7 @@
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   height: calc(100vh - 48px);
+  position: relative;
 }
 
 .photo-form-sidebar {
@@ -50,13 +51,6 @@ textarea {
   resize: none;
 }
 
-.photo-form-file-input {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .photo-form-title-input {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -78,4 +72,43 @@ textarea {
   width: 50%;
   height: 100%;
   box-sizing: border-box;
+}
+
+.file-input-box {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 62.5%;
+  left: 52.5%;
+  transform: translate(-50%, -50%);
+}
+
+.file-input-box img {
+  width: 100%;
+  height: 100%;
+} 
+
+.file-input-box input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-input-box-label {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.file-input-box-label p {
+  position: relative;
+  transform: translateY(-200%);
 }
