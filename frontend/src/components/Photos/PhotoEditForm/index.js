@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FiEdit } from "react-icons/fi";
 import "./PhotoEditForm.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { editPhoto } from "../../../store/reducers/photos_reducer";
 
 const PhotoEditForm = ({ photo }) => {
@@ -14,12 +14,14 @@ const PhotoEditForm = ({ photo }) => {
   const [description, setDescription] = useState(photo.description);
 
   // only the owner will see a hover effect over the title and description
-  if (isOwner) {
-    let container = document.getElementsByClassName(
-      "photo-edit-form-container"
-    )[0];
-    container.classList.add("photo-owner");
-  }
+  useEffect(() => {
+    if (isOwner) {
+      let container = document.getElementsByClassName(
+        "photo-edit-form-container"
+      )[0];
+      container.classList.add("photo-owner");
+    }
+  }, []);
 
   const handleClick = (e) => {
     setShowForm(true);

@@ -17,10 +17,12 @@ const PhotoForm = () => {
 
   const [photoData, setPhotoData] = useState(photo);
   const [photoURL, setPhotoURL] = useState(null);
+  const [showForm, setShowForm] = useState(false);
   if (!userId) return <Redirect to="/login" />;
 
   const handleFile = (e) => {
     setPhotoData({ ...photoData, photoFile: e.currentTarget.files[0] });
+    setShowForm(true);
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -29,6 +31,13 @@ const PhotoForm = () => {
     if (file) {
       fileReader.readAsDataURL(file);
     }
+  };
+
+  const handleChange = (e) => {
+    e.target.style.height = "inherit";
+    e.target.style.height = `${e.target.scrollHeight}px`;
+    e.target.style.height = `${Math.min(e.target.scrollHeight, 300)}px`;
+    setPhotoData({ ...photoData, description: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -44,10 +53,23 @@ const PhotoForm = () => {
   return (
     <>
       <div className="photo-form-page">
+        <input
+          className="photo-form-file-input"
+          type="file"
+          onChange={handleFile}
+          accept=".gif,.jpg,.jpeg,.png,.tiff,.raw"
+          required
+        />
         <div className="photo-form-sidebar">
+          {showForm && (
+            <div className="photo-form-title">
+              <h1>Editing 1 photo:</h1>
+            </div>
+          )}
           <div className="photo-form-container">
-            <form onSubmit={handleSubmit}>
+            <form>
               <input
+                className="photo-form-title-input"
                 type="text"
                 placeholder="Title"
                 onChange={(e) =>
@@ -56,18 +78,14 @@ const PhotoForm = () => {
               />
               <textarea
                 rows="4"
-                placeholder="Description"
-                onChange={(e) =>
-                  setPhotoData({ ...photoData, description: e.target.value })
-                }
+                placeholder="Add a description"
+                onChange={handleChange}
               />
-              <input
-                type="file"
-                onChange={handleFile}
-                accept=".gif,.jpg,.jpeg,.png,.tiff,.raw"
-                required
-              />
-              <button>Upload</button>
+              {showForm && (
+                <button className="comment-form-button" onClick={handleSubmit}>
+                  Upload
+                </button>
+              )}
             </form>
           </div>
         </div>

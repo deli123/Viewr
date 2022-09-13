@@ -1,12 +1,81 @@
 .photo-form-page {
   display: flex;
-  background-color: #666;
+  background-color: rgba(0, 0, 0, 0.8);
   height: calc(100vh - 48px);
 }
 
 .photo-form-sidebar {
   margin-left: 10px;
-  width: 240px;
+  min-width: 250px;
   background: rgba(0, 0, 0, 0.5);
-  height: 99%;
+  height: calc(100% - 16px);
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0px 16px 0px 16px;
+  margin-top: 8px;
+}
+
+.photo-form-title {
+  padding: 10px 10px 0px 0;
+  margin-top: 10px;
+}
+
+.photo-form-title h1 {
+  font-size: 24px;
+  color: #999;
+  font-weight: 300;
+}
+
+.photo-form-container {
+  width: 100%;
+  position: relative;
+}
+
+.photo-form-container input {
+  font-size: 16px;
+  padding: 5px;
+  width: calc(100% - 13px);
+  margin-bottom: 10px;
+  font-weight: 600;
+  line-height: 16px;
+  box-shadow: inset 0 0 0 1px #9ea4a7;
+}
+
+.photo-form-container textarea {
+  padding: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+.photo-form-file-input {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.photo-form-title-input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.photo-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  margin-right: 220px;
+  box-sizing: border-box;
+  padding-top: 10px;
+}
+
+.photo-preview img {
+  display: block;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
 }
