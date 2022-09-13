@@ -41,7 +41,7 @@ export const createComment = (commentData) => async (dispatch) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      'Accept': "application/json",
     },
     body: JSON.stringify({ comment: commentData }),
   });
@@ -57,7 +57,7 @@ export const editComment = (commentData) => async (dispatch) => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      'Accept': "application/json",
     },
     body: JSON.stringify({ comment: commentData }),
   });

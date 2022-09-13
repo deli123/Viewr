@@ -120,17 +120,21 @@
   justify-content: space-between;
 }
 
-.like-button {
+.like-delete-button {
   display: block;
   margin-left: auto;
-  width:fit-content;
+  width: fit-content;
   padding: 6px;
   margin-right: 6px;
   margin-top: 6px;
 }
 
-.like-button:hover {
+.like-delete-button:hover {
   cursor: pointer;
+}
+
+.delete-photo-button {
+  padding-left: 6px;
 }
 
 .photo-stats h1 {

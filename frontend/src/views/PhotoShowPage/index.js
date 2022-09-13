@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link, useParams } from "react-router-dom";
 import NavBar from "../../components/NavBar/UserNavBar";
@@ -15,10 +15,12 @@ import {
 } from "../../store/reducers/likes_reducer";
 import { formatDate } from "../../util/dateUtil";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import { getTags } from "../../store/reducers/tags_reducer";
 import TagIndex from "../../components/Tags/TagIndex";
 import TagsForm from "../../components/Tags/TagsForm";
 import "./PhotoShowPage.css";
+import PopupConfirmation from "../../components/PopupConfirmation";
 
 const PhotoShowPage = () => {
   const { photoId } = useParams();
@@ -26,6 +28,7 @@ const PhotoShowPage = () => {
     dispatch(fetchPhoto(photoId));
   }, [photoId]);
   const dispatch = useDispatch();
+  const [displayPopup, setDisplayPopup] = useState(false);
   const photo = useSelector(getPhoto(photoId));
   const user = useSelector(getAuthor);
   const comments = useSelector(getComments);
@@ -33,6 +36,10 @@ const PhotoShowPage = () => {
   const tags = useSelector(getTags);
   const sessionUser = useSelector((state) => state.session.user);
   if (!sessionUser) return <Redirect to="/login" />;
+
+  const hidePopup = () => {
+    setDisplayPopup(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,7 +61,7 @@ const PhotoShowPage = () => {
           </Link>
         </div>
         {photo && <img src={photo.photoUrl} alt={photo.title} />}
-        <div className="like-button">
+        <div className="like-delete-button">
           {likes && (
             <>
               {likes.liked ? (
@@ -72,6 +79,23 @@ const PhotoShowPage = () => {
               )}
             </>
           )}
+          {sessionUser && user && sessionUser.id === user.id && photo && (
+            <>
+              <RiDeleteBin6Line
+                className="delete-photo-button"
+                onClick={() => setDisplayPopup(true)}
+                fontSize={"30px"}
+                color="white"
+              />
+            </>
+          )}
+          {displayPopup && photo && (
+            <PopupConfirmation
+              displayPopup={hidePopup}
+              type={"photo"}
+              photoId={photo.id}
+            />
+          )}
         </div>
       </div>
       <div className="bottom-half">
@@ -86,8 +110,10 @@ const PhotoShowPage = () => {
                   <Link to="#">{`${user.fname} ${user.lname}`}</Link>
                   {photo && (
                     <>
-                      <h1>{`${photo.title}`}</h1>
-                      <p>{photo.description}</p>
+                      <div>
+                        <h1>{`${photo.title}`}</h1>
+                        <p>{photo.description}</p>
+                      </div>
                     </>
                   )}
                 </div>

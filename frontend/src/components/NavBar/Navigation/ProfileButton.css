@@ -1,0 +1,20 @@
+.profile-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    opacity: 0;
+    color: white;
+    outline: 1px red solid;
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    z-index: 1;
+    padding: 0.75rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    border-radius: 0.25rem;
+}
+
+.profile-dropdown > .profile-button:focus + .dropdown-menu {
+    opacity: 1;
+}

@@ -29,7 +29,7 @@ export const createTag = (tagData) => async (dispatch) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      "Accept": "application/json",
     },
     body: JSON.stringify({ tag: tagData }),
   });

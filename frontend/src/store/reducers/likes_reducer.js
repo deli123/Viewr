@@ -30,7 +30,7 @@ export const createLike = (likeData) => async (dispatch) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      "Accept": "application/json",
     },
     body: JSON.stringify({ like: likeData }),
   });

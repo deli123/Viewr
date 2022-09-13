@@ -19,14 +19,21 @@ class Api::PhotosController < ApplicationController
     end
 
     def create
-        debugger
-        
         @photo = Photo.new(photo_params)
         if @photo.save
             render :show
         else
             render json: @photo.errors.full_messages, status: 422
         end
+    end
+
+    def destroy
+        @photo = Photo.find(params[:id])
+         unless @photo
+            render json: { message: "Unauthorized" }, status: :unauthorized
+            return
+        end
+        @photo.destroy
     end
 
     private
