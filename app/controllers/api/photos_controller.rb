@@ -1,5 +1,5 @@
 class Api::PhotosController < ApplicationController
-    wrap_parameters include: Photo.attribute_names + [:photo]
+    wrap_parameters include: Photo.attribute_names + [:photo, :query]
     before_action :set_photo, only: [:show, :update]
 
     def index
@@ -42,6 +42,17 @@ class Api::PhotosController < ApplicationController
             return
         end
         @photo.destroy
+    end
+
+    def search
+        debugger
+        query = params[:query]
+        @photos = Photo.joins(:tags).where("body ILIKE ?", "%#{query}%")
+        if @photos.length > 0
+            render :index
+        else
+            render json: ["Sorry, we did not find any results for #{query}, try another search"], status: 404
+        end
     end
 
     private

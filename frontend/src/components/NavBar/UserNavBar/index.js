@@ -5,6 +5,7 @@ import PersonalLinks from "../PersonalLinks";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import "./UserNavBar.css";
 import { Link } from "react-router-dom";
+import SearchBar from "../../SearchBar";
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -32,6 +33,7 @@ const NavBar = () => {
           <div className="user-links">
             {sessionUser ? (
               <>
+                <SearchBar />
                 <Link to="/photos/upload">
                   <FaCloudUploadAlt fontSize={"30px"} color={"white"} />
                 </Link>

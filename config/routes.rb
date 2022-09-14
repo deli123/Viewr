@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:show, :create]
     resource :session, only: [:show, :create, :destroy]
-    resources :photos, only: [:index, :show, :create, :update, :destroy]
+    resources :photos, only: [:index, :show] do
+      collection do
+        get 'search/:query', to: "photos#search", as: "search"
+      end
+    end
+    resources :photos, only: [:create, :update, :destroy]
     resources :comments, only: [:create, :update, :destroy]
     resources :likes, only: [:create, :destroy]
     resources :tags, only: [:create, :destroy]

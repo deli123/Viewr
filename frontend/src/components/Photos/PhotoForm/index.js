@@ -23,6 +23,11 @@ const PhotoForm = () => {
 
   const handleFile = (e) => {
     setPhotoData({ ...photoData, photoFile: e.currentTarget.files[0] });
+
+    // when file is received, move the input box down from the center to below the image preview
+    let inputBox = document.getElementsByClassName("file-input-box")[0];
+    inputBox.classList.add("move-box-position");
+    
     setShowForm(true);
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
@@ -56,7 +61,7 @@ const PhotoForm = () => {
       <div className="photo-form-page">
         <div className="file-input-box">
           <div className="file-input-box-label">
-            <img src={imageUpload} alt="upload-image" />
+            <img src={imageUpload} alt="upload-box" />
             <p>Click here to add a file</p>
           </div>
           <input

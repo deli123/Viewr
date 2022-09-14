@@ -56,14 +56,29 @@ export const fetchPhoto = (photoId) => async (dispatch) => {
   }
 };
 
+export const searchPhotos = (query) => async (dispatch) => {
+  debugger;
+  const res = await fetch(`/api/photos/search/${query}`, {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  });
+
+  if (res.ok) {
+    const photos = await res.json();
+    dispatch(receivePhotos(photos));
+  }
+};
+
 // UPLOADING PHOTO
 export const createPhoto = (photoData) => async (dispatch) => {
   const res = await fetch(`/api/photos`, {
     method: "POST",
     body: photoData,
     headers: {
-      'X-CSRF-Token': sessionStorage.getItem('X-CSRF-Token')
-    }
+      "X-CSRF-Token": sessionStorage.getItem("X-CSRF-Token"),
+    },
   });
 
   if (res.ok) {
@@ -77,7 +92,7 @@ export const editPhoto = (photoData) => async (dispatch) => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      'Accept': "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({ photo: photoData }),
   });

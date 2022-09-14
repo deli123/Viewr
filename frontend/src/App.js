@@ -3,6 +3,7 @@ import AuthFormPage from "./views/AuthFormPage";
 import ExplorePage from "./views/ExplorePage";
 import PhotoFormPage from "./views/PhotoFormPage";
 import PhotoShowPage from "./views/PhotoShowPage";
+import SearchResultsPage from "./views/SearchResultsPage";
 import SplashPage from "./views/SplashPage";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/explore" component={ExplorePage} />
         <Route exact path="/photos/upload" component={PhotoFormPage} />
         <Route exact path="/photos/:photoId" component={PhotoShowPage} />
+        <Route exact path="/search/:query" component={SearchResultsPage} />
         <Redirect to="/" />
       </Switch>
     </>
