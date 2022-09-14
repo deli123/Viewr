@@ -34,7 +34,7 @@ const ProfileButton = ({ user }) => {
     <>
       <div className="profile-dropdown">
         <button className="profile-button" onClick={openMenu}>
-          <FaUserCircle fontSize={"30px"} color="white" />
+          <FaUserCircle className="profile-button-icon" fontSize={"30px"} color="white" />
         </button>
         {showMenu && (
           <div className="dropdown-menu">

@@ -52,7 +52,11 @@
 
 .profile-upload-container {
   display: flex;
-  width: 100px;
+  width: 90px;
   align-items: center;
   justify-content: space-between;
+}
+
+.profile-upload-container a:hover {
+  opacity: 0.7;
 }

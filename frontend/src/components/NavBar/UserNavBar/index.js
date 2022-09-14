@@ -36,7 +36,7 @@ const NavBar = () => {
                 <SearchBar />
                 <div className="profile-upload-container">
                   <Link to="/photos/upload">
-                    <FaCloudUploadAlt fontSize={"30px"} color={"white"} />
+                    <FaCloudUploadAlt fontSize={"36px"} color={"white"} />
                   </Link>
                   <ProfileButton user={sessionUser} />
                 </div>

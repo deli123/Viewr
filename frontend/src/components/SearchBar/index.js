@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 import "./SearchBar.css";
 
 const SearchBar = () => {
@@ -17,11 +18,14 @@ const SearchBar = () => {
         <form onSubmit={handleSubmit}>
           <input
             className="search-bar"
-            type="search"
+            type="text"
             onChange={(e) => setQuery(e.target.value)}
             placeholder={`Search by title, people, and tags`}
           />
         </form>
+        <button onClick={handleSubmit} className="search-bar-icon">
+          {<FaSearch fontSize={"24px"} />}
+        </button>
       </div>
     </>
   );
