@@ -34,12 +34,16 @@ const ProfileButton = ({ user }) => {
     <>
       <div className="profile-dropdown">
         <button className="profile-button" onClick={openMenu}>
-          <FaUserCircle fontSize={"30px"} />
+          <FaUserCircle fontSize={"30px"} color="white" />
         </button>
-        {showMenu && <div className="dropdown-menu">
-          <button onClick={logout}>Log Out</button>
-        </div>
-        }
+        {showMenu && (
+          <div className="dropdown-menu">
+            <h1>{`Welcome, ${user.username}`}</h1>
+            <button className="logout-button" onClick={logout}>
+              Log Out
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

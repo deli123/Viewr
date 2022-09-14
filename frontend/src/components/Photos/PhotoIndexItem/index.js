@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import "./PhotoIndexItem.css";
 import { useDispatch, useSelector } from "react-redux";
 import { createLike, deleteLike } from "../../../store/reducers/likes_reducer";
 
 const PhotoIndexItem = ({ photo }) => {
+  const location = useLocation();
+  // turn off Faves overlay on a search page
+  const isSearchPage = location.pathname.includes("search") ? true : false;
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -29,14 +32,14 @@ const PhotoIndexItem = ({ photo }) => {
               <h1>{photo.title}</h1>
               <span>{`by ${photo.fname} ${photo.lname}`}</span>
             </div>
-            <div className="overlay-like-button">
+            {!isSearchPage && <div className="overlay-like-button">
               {photo.liked ? (
                 <AiFillStar className="explore-like-button" onClick={handleSubmit} fontSize={"18px"} />
               ) : (
                 <AiOutlineStar className="explore-like-button" onClick={handleSubmit} fontSize={"18px"} />
               )}
               <span>{`${photo.likes}`}</span>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

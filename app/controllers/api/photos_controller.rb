@@ -45,13 +45,12 @@ class Api::PhotosController < ApplicationController
     end
 
     def search
-        debugger
         query = params[:query]
         @photos = Photo.joins(:tags).where("body ILIKE ?", "%#{query}%")
         if @photos.length > 0
             render :index
         else
-            render json: ["Sorry, we did not find any results for #{query}, try another search"], status: 404
+            render json: {}
         end
     end
 

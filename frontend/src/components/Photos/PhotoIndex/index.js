@@ -4,14 +4,16 @@ import { fetchPhotos, getPhotos } from "../../../store/reducers/photos_reducer";
 import PhotoIndexItem from "../PhotoIndexItem";
 import "./PhotoIndex.css";
 
-const PhotoIndex = () => {
+const PhotoIndex = ({ searchResults }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchPhotos());
+    if (!(searchResults.length > 0)) dispatch(fetchPhotos());
   }, [dispatch]);
 
-  const photos = useSelector(getPhotos);
+  const photos = useSelector((state) =>
+    searchResults.length > 0 ? searchResults : getPhotos(state)
+  );
 
   return (
     <>

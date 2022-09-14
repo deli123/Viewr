@@ -34,10 +34,12 @@ const NavBar = () => {
             {sessionUser ? (
               <>
                 <SearchBar />
-                <Link to="/photos/upload">
-                  <FaCloudUploadAlt fontSize={"30px"} color={"white"} />
-                </Link>
-                <ProfileButton user={sessionUser} />
+                <div className="profile-upload-container">
+                  <Link to="/photos/upload">
+                    <FaCloudUploadAlt fontSize={"30px"} color={"white"} />
+                  </Link>
+                  <ProfileButton user={sessionUser} />
+                </div>
               </>
             ) : (
               ""

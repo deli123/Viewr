@@ -1,20 +1,54 @@
 .profile-dropdown {
-    position: relative;
+  position: relative;
 }
 
 .dropdown-menu {
-    opacity: 0;
-    color: white;
-    outline: 1px red solid;
-    position: absolute;
-    top: calc(100% + 0.25rem);
-    left: 0;
-    z-index: 1;
-    padding: 0.75rem;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
-    border-radius: 0.25rem;
+  background-color: white;
+  opacity: 0;
+  color: black;
+  outline: 1px black solid;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  transform: translate(-100%, 65%);
+  z-index: 2;
+  padding: 0.75rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  width: 300px;
+  transition: opacity 0.15s ease-in-out;
 }
 
 .profile-dropdown > .profile-button:focus + .dropdown-menu {
-    opacity: 1;
+  opacity: 1;
+}
+
+.profile-button {
+  background-color: #101010;
+}
+
+.profile-button,
+.logout-button {
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 3px;
+}
+
+.logout-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu h1 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  word-break: break-word;
 }

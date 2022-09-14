@@ -57,7 +57,6 @@ export const fetchPhoto = (photoId) => async (dispatch) => {
 };
 
 export const searchPhotos = (query) => async (dispatch) => {
-  debugger;
   const res = await fetch(`/api/photos/search/${query}`, {
     headers: {
       "Content-Type": "application/json",
@@ -120,7 +119,11 @@ const photosReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_PHOTOS:
-      return { ...nextState, ...action.photos };
+      if (action.photos.photos) {
+        return action.photos.photos;
+      } else {
+        return null;
+      }
     case RECEIVE_PHOTO:
       nextState[action.photo.photo.id] = action.photo.photo;
       return nextState;

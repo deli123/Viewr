@@ -7,19 +7,19 @@ import imageUpload from "../../../../src/assets/images/image-upload.svg";
 import "./PhotoForm.css";
 
 const PhotoForm = () => {
-  const userId = useSelector((state) => state.session.user.id);
+  const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   let photo = {
     title: "",
     description: "",
-    userId,
+    userId: user.id,
     photoFile: null,
   };
 
   const [photoData, setPhotoData] = useState(photo);
   const [photoURL, setPhotoURL] = useState(null);
   const [showForm, setShowForm] = useState(false);
-  if (!userId) return <Redirect to="/login" />;
+  if (!user) return <Redirect to="/login" />;
 
   const handleFile = (e) => {
     setPhotoData({ ...photoData, photoFile: e.currentTarget.files[0] });
@@ -27,7 +27,7 @@ const PhotoForm = () => {
     // when file is received, move the input box down from the center to below the image preview
     let inputBox = document.getElementsByClassName("file-input-box")[0];
     inputBox.classList.add("move-box-position");
-    
+
     setShowForm(true);
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();

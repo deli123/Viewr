@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 30%;
+  width: 22.5%;
 }
 
 .you-explore {
@@ -33,8 +33,8 @@
 .user-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  width: 30%;
+  justify-content: space-between;
+  width: 22.5%;
 }
 
 .photo-index {
@@ -48,4 +48,11 @@
   margin-top: 24px;
   margin-bottom: 5px;
   color: #484848;
+}
+
+.profile-upload-container {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: space-between;
 }

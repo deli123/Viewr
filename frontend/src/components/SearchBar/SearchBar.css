@@ -1,7 +1,17 @@
 .search-bar-container {
-    width: 50%
+  width: 50%;
 }
 
 .search-bar {
-    width: 100%;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 33px;
+  margin: 0 9px 0 0;
+  width: 220px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 10px;
+  resize: none;
+  font-weight: 400;
 }
