@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { createPhoto } from "../../../store/reducers/photos_reducer";
 import imageUpload from "../../../../src/assets/images/image-upload.svg";
 import "./PhotoForm.css";
@@ -9,6 +9,7 @@ import "./PhotoForm.css";
 const PhotoForm = () => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
   let photo = {
     title: "",
     description: "",
@@ -54,6 +55,7 @@ const PhotoForm = () => {
     data.append("photo[userId]", photoData.userId);
     data.append("photo[photo]", photoData.photoFile);
     dispatch(createPhoto(data));
+    history.push(`/users/${user.id}`)
   };
 
   return (

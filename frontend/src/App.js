@@ -5,6 +5,7 @@ import PhotoFormPage from "./views/PhotoFormPage";
 import PhotoShowPage from "./views/PhotoShowPage";
 import SearchResultsPage from "./views/SearchResultsPage";
 import SplashPage from "./views/SplashPage";
+import UserProfilePage from "./views/UserProfilePage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/photos/upload" component={PhotoFormPage} />
         <Route exact path="/photos/:photoId" component={PhotoShowPage} />
         <Route exact path="/search/:query" component={SearchResultsPage} />
+        <Route exact path="/users/:userId" component={UserProfilePage} />
         <Redirect to="/" />
       </Switch>
     </>

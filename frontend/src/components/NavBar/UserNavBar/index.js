@@ -18,7 +18,7 @@ const NavBar = () => {
             <HomeButton />
             {sessionUser ? (
               <>
-                <Link className="you-explore" to="/explore">
+                <Link className="you-explore" to={`/users/${sessionUser.id}`}>
                   You
                 </Link>
                 <Link className="you-explore" to="/explore">
