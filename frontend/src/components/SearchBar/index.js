@@ -19,7 +19,7 @@ const SearchBar = () => {
             className="search-bar"
             type="search"
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={`Search by tags`}
+            placeholder={`Search by title, people, and tags`}
           />
         </form>
       </div>

@@ -46,7 +46,7 @@ class Api::PhotosController < ApplicationController
 
     def search
         query = params[:query]
-        @photos = Photo.joins(:tags).where("body ILIKE ?", "%#{query}%")
+        @photos = Photo.joins(:tags, :user).where("body ILIKE ? OR title ILIKE ? OR fname ILIKE ? OR lname ILIKE ?", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")
         if @photos.length > 0
             render :index
         else
