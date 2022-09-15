@@ -108,7 +108,7 @@ const PhotoShowPage = () => {
                   <CgProfile fontSize={"60px"} />
                 </div>
                 <div className="photo-details">
-                  <Link to="#">{`${user.fname} ${user.lname}`}</Link>
+                  <Link to={`/users/${user.id}`}>{`${user.fname} ${user.lname}`}</Link>
                   {photo && sessionUser && user && (
                     <>
                       <PhotoEditForm photo={photo}/>

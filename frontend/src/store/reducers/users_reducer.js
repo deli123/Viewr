@@ -49,7 +49,7 @@ export const fetchUser = (userId) => async (dispatch) => {
 
   if (res.ok) {
     const user = await res.json();
-    dispatch(receiveUser(user.user));
+    dispatch(receiveUser(user));
   }
 };
 
@@ -61,12 +61,11 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USERS:
       return { ...nextState, ...action.users };
     case RECEIVE_USER:
-      nextState[action.user.id] = action.user;
+      nextState[action.user.user.id] = action.user.user;
       return nextState;
     case RECEIVE_PHOTO:
       const id = action.photo.user.id;
       return { [id]: action.photo.user };
-
     default:
       return nextState;
   }

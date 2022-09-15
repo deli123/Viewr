@@ -1,5 +1,6 @@
 import csrfFetch from "../csrf";
 import { RECEIVE_LIKE, REMOVE_LIKE } from "./likes_reducer";
+import { RECEIVE_USER } from "./users_reducer";
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
@@ -140,6 +141,12 @@ const photosReducer = (state = {}, action) => {
       nextState[action.like.photoId].liked = false;
       delete nextState[action.like.photoId].likeId;
       return nextState;
+    case RECEIVE_USER:
+      if (action.user.photos) {
+        return action.user.photos;
+      } else {
+        return null;
+      }
     default:
       return nextState;
   }

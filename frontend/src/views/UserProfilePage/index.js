@@ -1,11 +1,13 @@
 import NavBar from "../../components/NavBar/UserNavBar";
+import UserProfileHeader from "../../components/UserProfile/UserProfileHeader";
 
 const UserProfilePage = () => {
-    return (
-        <>
-            <NavBar/>
-        </>
-    )
-}
+  return (
+    <>
+      <NavBar />
+      <UserProfileHeader />
+    </>
+  );
+};
 
 export default UserProfilePage;
