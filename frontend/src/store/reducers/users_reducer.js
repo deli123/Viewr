@@ -1,3 +1,4 @@
+import csrfFetch from "../csrf";
 import { RECEIVE_PHOTO } from "./photos_reducer";
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
@@ -46,6 +47,22 @@ export const fetchUsers = () => async (dispatch) => {
 
 export const fetchUser = (userId) => async (dispatch) => {
   const res = await fetch(`/api/users/${userId}`);
+
+  if (res.ok) {
+    const user = await res.json();
+    dispatch(receiveUser(user));
+  }
+};
+
+export const editUser = (userData) => async (dispatch) => {
+  const res = await csrfFetch(`/api/users/${userData.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      'Accept': "application/json",
+    },
+    body: JSON.stringify({ user: userData }),
+  });
 
   if (res.ok) {
     const user = await res.json();

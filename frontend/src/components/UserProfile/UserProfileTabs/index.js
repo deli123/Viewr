@@ -4,8 +4,10 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import PhotostreamTab from "../Tabs/PhotostreamTab";
 import "./UserProfileTabs.css";
+import AboutTab from "../Tabs/AboutTab";
 
 const UserProfileTabs = () => {
+  // set default tab
   const [value, setValue] = useState("2");
 
   const handleChange = (e, newValue) => {
@@ -22,6 +24,7 @@ const UserProfileTabs = () => {
               <Tab value="2" label="Photostream" />
             </Tabs>
           </Box>
+          {value === "1" && <AboutTab />}
           {value === "2" && <PhotostreamTab />}
         </div>
       </div>

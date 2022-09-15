@@ -1,0 +1,61 @@
+.about-container {
+  background-color: white;
+  margin-top: 20px;
+  padding: 40px 10% 40px 10%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px #e3e3e3;
+  position: relative;
+}
+
+.about-text {
+  max-width: 1200px;
+  word-break: break-all;
+}
+
+.about-textarea {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.about-form {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-form textarea:focus-visible {
+  border: 1px solid #1372e8;
+}
+
+.about-form-buttons {
+  display: flex;
+  width: 100px;
+  justify-content: flex-end;
+}
+
+.about-buttons {
+  padding: 0;
+}
+
+.about-cancel {
+  background: #979ea2;
+}
+
+.about-placeholder {
+  font-style: italic;
+}
+
+.about-edit-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  position: absolute;
+  left: 90%;
+}
+
+.about-edit-button:hover {
+  cursor: pointer;
+}

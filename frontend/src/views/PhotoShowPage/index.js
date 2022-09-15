@@ -90,11 +90,12 @@ const PhotoShowPage = () => {
               />
             </>
           )}
-          {displayPopup && photo && (
+          {displayPopup && photo && user && (
             <PopupConfirmation
               displayPopup={hidePopup}
               type={"photo"}
               photoId={photo.id}
+              userId={user.id}
             />
           )}
         </div>

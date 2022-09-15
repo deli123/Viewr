@@ -3,10 +3,12 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from "../../../store/session";
 import { FaUserCircle } from "react-icons/fa";
 import "./ProfileButton.css";
+import { useHistory } from "react-router-dom";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory();
 
   const openMenu = () => {
     if (showMenu) return;
@@ -28,6 +30,7 @@ const ProfileButton = ({ user }) => {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push('/login');
   };
 
   return (

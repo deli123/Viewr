@@ -5,7 +5,7 @@ import { deletePhoto } from "../../store/reducers/photos_reducer";
 import { useHistory } from "react-router-dom";
 import "./PopupConfirmation.css";
 
-function PopupConfirmation({ displayPopup, commentId, photoId, type }) {
+function PopupConfirmation({ displayPopup, commentId, photoId, type, userId }) {
   const isDeletePhoto = type === "photo" ? true : false;
   const dispatch = useDispatch();
   const history = useHistory();
@@ -19,7 +19,7 @@ function PopupConfirmation({ displayPopup, commentId, photoId, type }) {
     e.preventDefault();
     if (isDeletePhoto) {
       dispatch(deletePhoto(photoId));
-      history.push("/explore");
+      history.push(`/users/${userId}`);
     } else {
       dispatch(deleteComment(commentId));
     }

@@ -38,7 +38,6 @@ const CommentIndexItem = ({ comment }) => {
   const handleChange = (e) => {
     e.target.style.height = "initial";
     e.target.style.height = `${e.target.scrollHeight}px`;
-    e.target.style.height = `${Math.min(e.target.scrollHeight, 300)}px`;
     setBody(e.target.value);
   };
 
@@ -74,7 +73,9 @@ const CommentIndexItem = ({ comment }) => {
               <Link to={`/users/${comment.authorId}`}>
                 <h1>{`${comment.fname} ${comment.lname}`}</h1>
               </Link>
-              <p className="comment-time-ago">{cuteTimeAgo(comment.updatedAt)}</p>
+              <p className="comment-time-ago">
+                {cuteTimeAgo(comment.updatedAt)}
+              </p>
             </div>
             {sessionUserId === comment.authorId && (
               <>

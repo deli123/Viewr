@@ -1,20 +1,11 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { getPhotos } from "../../../store/reducers/photos_reducer";
-import { fetchUser, getAuthor } from "../../../store/reducers/users_reducer";
+import { getAuthor } from "../../../store/reducers/users_reducer";
 import { FaUserCircle } from "react-icons/fa";
 import "./UserProfileHeader.css";
 import { getYear } from "../../../util/dateUtil";
+import { useSelector } from "react-redux";
 
 const UserProfileHeader = () => {
-  const { userId } = useParams();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchUser(userId));
-  }, [userId]);
-
   const user = useSelector(getAuthor);
   const photos = useSelector(getPhotos);
 
