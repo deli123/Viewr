@@ -9,7 +9,7 @@ json.photos do
                     :album_id,
                     :created_at
       json.photo_url photo.photo.url if photo.photo.attached?
-      json.extract! photo.user, :fname, :lname
+      json.extract! photo.user, :fname, :lname, :username, :created_at
       json.likes photo.likes.count
       json.liked(
         if Like.where("user_id = ? AND photo_id = ?", @user, photo.id).count !=

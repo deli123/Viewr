@@ -50,10 +50,13 @@ const CommentIndexItem = ({ comment }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateComment = { ...updateComment, body };
-    dispatch(editComment(updateComment));
+    if (body.trim().length >= 1) {
+      dispatch(editComment(updateComment));
+    } else {
+      setBody(comment.body);
+    }
     setShowForm(false);
     setShowEditButton(true);
-    setBody(body);
   };
 
   return (

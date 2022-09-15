@@ -9,7 +9,7 @@ json.photo do
   json.photo_url @photo.photo.url if @photo.photo.attached?
 end
 
-json.user { json.extract! @photo.user, :id, :fname, :lname }
+json.user { json.extract! @photo.user, :id, :fname, :lname, :username, :created_at }
 
 json.comments do
   @photo.comments.each do |comment|
