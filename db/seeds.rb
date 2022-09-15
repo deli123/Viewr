@@ -81,7 +81,7 @@ user4 =
   }) 
 end
 
-path = "https://viewr-dev.s3.us-west-1.amazonaws.com/"
+path = "https://viewr-pro.s3.us-west-1.amazonaws.com/"
 
 photo1 =
   Photo.create!(
