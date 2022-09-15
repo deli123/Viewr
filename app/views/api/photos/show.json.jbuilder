@@ -14,7 +14,7 @@ json.user { json.extract! @photo.user, :id, :fname, :lname }
 json.comments do
   @photo.comments.each do |comment|
     json.set! comment.id do
-      json.extract! comment, :id, :body, :author_id, :photo_id
+      json.extract! comment, :id, :body, :author_id, :photo_id, :updated_at
       json.extract! comment.author, :fname, :lname
     end
   end

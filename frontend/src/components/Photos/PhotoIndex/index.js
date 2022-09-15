@@ -20,7 +20,7 @@ const PhotoIndex = ({ searchResults }) => {
     } else if (!(searchResults.length > 0)) {
       dispatch(fetchPhotos());
     }
-  }, [query]);
+  }, [query, searchResults.length]);
 
   photos = useSelector((state) =>
     query

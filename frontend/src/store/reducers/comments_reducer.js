@@ -6,13 +6,6 @@ export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 // ACTIONS
-const receiveComments = (comments) => {
-  return {
-    type: RECEIVE_COMMENTS,
-    comments,
-  };
-};
-
 const receiveComment = (comment) => {
   return {
     type: RECEIVE_COMMENT,

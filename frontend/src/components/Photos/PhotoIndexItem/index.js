@@ -14,7 +14,7 @@ const PhotoIndexItem = ({ photo }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (photo.liked) {
-      dispatch(deleteLike({id: photo.likeId, photoId: photo.id}));
+      dispatch(deleteLike({ id: photo.likeId, photoId: photo.id }));
     } else {
       dispatch(createLike({ userId: sessionUser.id, photoId: photo.id }));
     }
@@ -32,14 +32,24 @@ const PhotoIndexItem = ({ photo }) => {
               <h1>{photo.title}</h1>
               <span>{`by ${photo.fname} ${photo.lname}`}</span>
             </div>
-            {!isSearchPage && <div className="overlay-like-button">
-              {photo.liked ? (
-                <AiFillStar className="explore-like-button" onClick={handleSubmit} fontSize={"18px"} />
-              ) : (
-                <AiOutlineStar className="explore-like-button" onClick={handleSubmit} fontSize={"18px"} />
-              )}
-              <span>{`${photo.likes}`}</span>
-            </div>}
+            {!isSearchPage && (
+              <div className="overlay-like-button">
+                {photo.liked ? (
+                  <AiFillStar
+                    className="explore-like-button"
+                    onClick={handleSubmit}
+                    fontSize={"18px"}
+                  />
+                ) : (
+                  <AiOutlineStar
+                    className="explore-like-button"
+                    onClick={handleSubmit}
+                    fontSize={"18px"}
+                  />
+                )}
+                <span>{`${photo.likes}`}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>

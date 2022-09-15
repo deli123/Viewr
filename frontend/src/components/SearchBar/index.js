@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import "./SearchBar.css";
 

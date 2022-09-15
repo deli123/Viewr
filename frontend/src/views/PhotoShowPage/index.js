@@ -108,10 +108,12 @@ const PhotoShowPage = () => {
                   <CgProfile fontSize={"60px"} />
                 </div>
                 <div className="photo-details">
-                  <Link to={`/users/${user.id}`}>{`${user.fname} ${user.lname}`}</Link>
+                  <Link
+                    to={`/users/${user.id}`}
+                  >{`${user.fname} ${user.lname}`}</Link>
                   {photo && sessionUser && user && (
                     <>
-                      <PhotoEditForm photo={photo}/>
+                      <PhotoEditForm photo={photo} />
                     </>
                   )}
                 </div>
@@ -150,7 +152,7 @@ const PhotoShowPage = () => {
             </div>
             <div className="photo-stats-separator"></div>
             <div className="tags-container">
-              {sessionUser && user && (
+              {sessionUser && user && photo && (
                 <TagsForm
                   sessionUser={sessionUser.id}
                   photoOwner={photo.userId}

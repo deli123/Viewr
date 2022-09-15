@@ -1,0 +1,10 @@
+.user-tabs-container {
+  background-color: white;
+  width: 100%;
+  height: 48px;
+}
+
+.user-tabs-panel {
+  width: 80%;
+  margin: auto;
+}

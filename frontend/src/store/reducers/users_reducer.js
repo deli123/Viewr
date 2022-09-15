@@ -61,11 +61,11 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USERS:
       return { ...nextState, ...action.users };
     case RECEIVE_USER:
-      nextState[action.user.user.id] = action.user.user;
-      return nextState;
+      const userId = action.user.user.id;
+      return { [userId]: action.user.user };
     case RECEIVE_PHOTO:
-      const id = action.photo.user.id;
-      return { [id]: action.photo.user };
+      const photoId = action.photo.user.id;
+      return { [photoId]: action.photo.user };
     default:
       return nextState;
   }

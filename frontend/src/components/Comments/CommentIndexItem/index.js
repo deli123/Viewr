@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import "./CommentIndexItem.css";
+import { cuteTimeAgo } from "../../../util/dateUtil";
 
 const CommentIndexItem = ({ comment }) => {
   const dispatch = useDispatch();
@@ -69,9 +70,12 @@ const CommentIndexItem = ({ comment }) => {
         </div>
         <div className="comment-details">
           <div className="comment-header">
-            <Link to={"#"}>
-              <h1>{`${comment.fname} ${comment.lname}`}</h1>
-            </Link>
+            <div className="comment-title">
+              <Link to={`/users/${comment.authorId}`}>
+                <h1>{`${comment.fname} ${comment.lname}`}</h1>
+              </Link>
+              <p className="comment-time-ago">{cuteTimeAgo(comment.updatedAt)}</p>
+            </div>
             {sessionUserId === comment.authorId && (
               <>
                 {showButtons && (

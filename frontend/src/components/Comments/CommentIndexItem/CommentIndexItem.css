@@ -35,11 +35,23 @@
   height: 24px;
 }
 
-.comment-header a {
-  color: #006dac;
+.comment-header {
   font-size: 14px;
   line-height: 24px;
   font-weight: 600;
+}
+
+.comment-header a {
+  color: #006dac;
+}
+
+.comment-title {
+  display: flex;
+}
+
+.comment-time-ago {
+  color: #898989;
+  margin-left: 12px;
 }
 
 .comment-buttons {

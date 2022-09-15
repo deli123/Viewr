@@ -21,7 +21,7 @@ const PhotoEditForm = ({ photo }) => {
       )[0];
       container.classList.add("photo-owner");
     }
-  }, []);
+  }, [isOwner]);
 
   const handleClick = (e) => {
     setShowForm(true);
