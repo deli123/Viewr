@@ -26,7 +26,8 @@ demo =
     lname: "User",
     username: "demouser",
     email: "demo@user.io",
-    password: "password"
+    password: "password",
+    about: "Analyst. Coffee fanatic. Extreme twitter trailblazer. Social media lover. Internet guru. Hardcore bacon maven. Total introvert."
   )
 
 user1 =
@@ -35,7 +36,8 @@ user1 =
     lname: "Wolf",
     username: "wolfie",
     email: "wolfie@greenfelder.co",
-    password: "password"
+    password: "password",
+    about: "Prone to fits of apathy. Twitter specialist. Beer maven. Incurable internet geek. Total creator. Freelance music trailblazer."
   )
 
 user2 =
@@ -44,7 +46,8 @@ user2 =
     lname: "Batz",
     username: "josephbatz",
     email: "sol@crona-deckow.co",
-    password: "password"
+    password: "password",
+    about: "Beeraholic. Certified bacon fan. Tv enthusiast. Wannabe problem solver. Incurable travel geek. Internet fanatic."
   )
 
 user3 =
@@ -53,7 +56,8 @@ user3 =
     lname: "Jones",
     username: "shawana",
     email: "shawana@mohr.biz",
-    password: "password"
+    password: "password",
+    about: "Tv expert. Student. Social media buff. Subtly charming coffeeaholic. Incurable web enthusiast."
   )
 
 user4 =
@@ -62,8 +66,20 @@ user4 =
     lname: "Johnson",
     username: "marinejohnson",
     email: "marinejohnson@mertz.net",
-    password: "password"
+    password: "password",
+    about: "Food ninja. Typical tv aficionado. Organizer. Pop culture practitioner. Music nerd. Entrepreneur."
   )
+
+10.times do 
+  User.create!({
+    fname: Faker::Name.first_name,
+    lname: Faker::Name.last_name,
+    username: Faker::Internet.unique.username(specifier: 3),
+    email: Faker::Internet.unique.email,
+    password: 'password',
+    about: Faker::Quote.yoda
+  }) 
+end
 
 path = "https://viewr-dev.s3.us-west-1.amazonaws.com/"
 
@@ -137,6 +153,26 @@ photo7 =
 file = URI.open("#{path}photo7.jpg")
 photo7.photo.attach(io: file, filename: "photo7.jpg")
 
+photo8 =
+  Photo.create!(
+    title: "Beautiful",
+    description:
+      "Tall buildings with beautiful art on top.  Most people would prefer to live in a tall building that is beautiful and has a lot of interesting artworks on it.",
+    user_id: user1.id
+  )
+file = URI.open("#{path}photo8.jpg")
+photo8.photo.attach(io: file, filename: "photo8.jpg")
+
+photo9 =
+  Photo.create!(
+    title: "Amazing skyscrapers",
+    description:
+      "Tall Buildings are a part of our lives that we don't give much thought to. But they are an art form in their own right. Check out these amazing skyscrapers, church spires, and other architectural wonders.",
+    user_id: user1.id
+  )
+file = URI.open("#{path}photo9.jpg")
+photo9.photo.attach(io: file, filename: "photo9.jpg")
+
 photo10 =
   Photo.create!(
     title: "Truly beautiful",
@@ -146,6 +182,36 @@ photo10 =
   )
 file = URI.open("#{path}photo10.jpg")
 photo10.photo.attach(io: file, filename: "photo10.jpg")
+
+photo11 =
+  Photo.create!(
+    title: "Architectural beauty",
+    description:
+      "Tall buildings are often the epitome of architectural beauty, and the tallest buildings in the world are certainly some of the most impressive and beautiful. Explore tall buildings from all over the world, from the pyramids of Egypt right up to the Petronas Towers of Kuala Lumpur.",
+    user_id: user2.id
+  )
+file = URI.open("#{path}photo11.jpg")
+photo11.photo.attach(io: file, filename: "photo11.jpg")
+
+photo12 =
+  Photo.create!(
+    title: "A building I stumbled upon",
+    description:
+      "Explore the tallest buildings in the world, from the Burj Khalifa to the Willis Tower in Chicago.",
+    user_id: user2.id
+  )
+file = URI.open("#{path}photo12.jpg")
+photo12.photo.attach(io: file, filename: "photo12.jpg")
+
+photo13 =
+  Photo.create!(
+    title: "Looking up",
+    description:
+      "A group of tall and beautiful buildings, mostly residential, towers over the city of Delhi and at night, they seem to glow. See more beautiful tall buildings.",
+    user_id: user2.id
+  )
+file = URI.open("#{path}photo13.jpg")
+photo13.photo.attach(io: file, filename: "photo13.jpg")
 
 photo14 =
   Photo.create!(
@@ -177,6 +243,16 @@ photo16 =
 file = URI.open("#{path}photo16.jpg")
 photo16.photo.attach(io: file, filename: "photo16.jpg")
 
+photo17 =
+  Photo.create!(
+    title: "Masterpiece",
+    description:
+      "A tall building is a building that rises a great height. The term is sometimes used more loosely to include spires, towers and other structures that are tall but not made of steel.",
+    user_id: user3.id
+  )
+file = URI.open("#{path}photo17.jpg")
+photo17.photo.attach(io: file, filename: "photo17.jpg")
+
 photo18 =
   Photo.create!(
     title: "Masterpiece",
@@ -197,20 +273,78 @@ photo19 =
 file = URI.open("#{path}photo19.jpg")
 photo19.photo.attach(io: file, filename: "photo19.jpg")
 
-comment1 =
-  Comment.create!(body: "test", author_id: demo.id, photo_id: photo1.id)
-comment2 =
-  Comment.create!(body: "test1", author_id: demo.id, photo_id: photo1.id)
-comment3 = Comment.create!(body: "test2", author_id: demo.id, photo_id: photo2.id)
-
-comment4 =
-  Comment.create!(body: "hahaha", author_id: user1.id, photo_id: photo1.id)
-comment5 =
-  Comment.create!(
-    body: "you cant delete me",
-    author_id: user1.id,
-    photo_id: photo1.id
+photo20 =
+  Photo.create!(
+    title: "Impressive",
+    description:
+      "This post shares some of my favorite images of tall, beautiful, amazing, lovely, impressive, artwork, and height.",
+    user_id: user3.id
   )
-# comment6 = Comment.create!(body: "lalala", author_id: user1.id, photo_id: photo2.id)
+file = URI.open("#{path}photo20.jpg")
+photo20.photo.attach(io: file, filename: "photo20.jpg")
+
+photo21 =
+  Photo.create!(
+    title: "Tall",
+    description:
+      "Tall, beautiful, amazing, lovely, impressed, artwork, height.",
+    user_id: user4.id
+  )
+file = URI.open("#{path}photo21.jpg")
+photo21.photo.attach(io: file, filename: "photo21.jpg")
+
+comment1 = Comment.create!(body: "first", author_id: user1.id, photo_id: photo1.id)
+comment2 = Comment.create!(body: "Impressive!!!!", author_id: user2.id, photo_id: photo1.id)
+comment3 = Comment.create!(body: "I love it!", author_id: user3.id, photo_id: photo1.id)
+comment4 = Comment.create!(body: "amazing photography", author_id: user4.id, photo_id: photo1.id)
+comment5 = Comment.create!(body: "Thank you!", author_id: demo.id, photo_id: photo1.id)
+comment6 = Comment.create!(body: "Much wow so amaze", author_id: demo.id, photo_id: photo2.id)
+comment7 = Comment.create!(body: "I would give you two faves if I could", author_id: user1.id, photo_id: photo2.id)
+comment8 = Comment.create!(body: "Same", author_id: user4.id, photo_id: photo2.id)
+comment9 = Comment.create!(body: "Very nice", author_id: user2.id, photo_id: photo2.id)
+
+user_id_bank = User.all.ids
+body_bank = ["I love it!", "I looooove it!!", "Super amazing!", "You made it!",
+             "I'm impressed", "super impressive", "I agree", "Your work is amazing!",
+             "Your photography is amazing!", "I love buildings too", "That's really tall",
+             "nice", "Woooooow", "Wow!", "Wowie", "Faved, thank you", "Faved", "Nice!",
+             "That's really cool", "I can't believe my eyes!", "Really stunning",
+             "Thank you for sharing", "Thanks for sharing", "You're amazing", "Niceeeee",
+             "Much like", "Beautiful", "Impressive", "Thank you", "Nice!", "Super cool",
+             "Your skills are nice", "Skillful", "Masterclass", "Masterpiece", "True masterpice",
+             "How did you take this?", "What camera do you use?", "What camera?", "What camera settings?",
+              "Can you share your camera settings", "Can you share your camera", "How did you take this?",
+              "I wish my photography skills were as good as yours", "Nice, I can't wait to share mine too"
+            ] 
+
+Photo.all.each do |photo|
+  author_ids = user_id_bank.sample(7);
+  author_ids.each do |author_id|
+    Comment.create!(body: body_bank.sample(), author_id: author_id, photo_id: photo.id)
+  end
+end
+
+# Create Likes for each user on each photo
+User.all.each do |user|
+  Photo.all.each do |photo|
+    Like.create!(user_id: user.id, photo_id: photo.id)
+  end
+end
+
+# Create Tags on each photo
+word_bank = ["tall", "amaze", "art", "artwork", "mesmerizing", "photo", 
+        "photography", "wow", "amazing", "beautiful", "tallest", "buildings",
+        "night", "day", "best", "stunned", "stunning", "super", "shocked", "architecture",
+        "architectural", "beauty", "best", "woooooow", "dizzy", "shocking", "masterpiece",
+        "image", "great", "greatest", "collection", "world", "iconic", "empire",
+        "engineering", "future", "generational", "generations", "generation"
+      ]
+
+Photo.all.each do |photo|
+  tags = word_bank.sample(10);
+  tags.each do |tag|
+    Tag.create!(body: tag, photo_id: photo.id)
+  end
+end
 
 puts "Done!"
