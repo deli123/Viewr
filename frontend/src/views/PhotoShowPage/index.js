@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, Link, useParams } from "react-router-dom";
+import { Redirect, Link, useParams, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/UserNavBar";
 import { fetchPhoto, getPhoto } from "../../store/reducers/photos_reducer";
 import { getAuthor } from "../../store/reducers/users_reducer";
@@ -26,9 +26,10 @@ import PhotoEditForm from "../../components/Photos/PhotoEditForm";
 const PhotoShowPage = () => {
   const { photoId } = useParams();
   useEffect(() => {
-    dispatch(fetchPhoto(photoId));
+    dispatch(fetchPhoto(photoId)).catch((error) => history.push("/explore"));
   }, [photoId]);
   const dispatch = useDispatch();
+  const history = useHistory();
   const [displayPopup, setDisplayPopup] = useState(false);
   const photo = useSelector(getPhoto(photoId));
   const user = useSelector(getAuthor);

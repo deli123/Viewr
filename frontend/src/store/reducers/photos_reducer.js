@@ -54,6 +54,8 @@ export const fetchPhoto = (photoId) => async (dispatch) => {
   if (res.ok) {
     const photo = await res.json();
     dispatch(receivePhoto(photo));
+  } else {
+    throw new Error('Nonexistent Photo');
   }
 };
 

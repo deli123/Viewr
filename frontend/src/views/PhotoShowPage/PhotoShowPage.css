@@ -1,9 +1,11 @@
 .show-container {
-  height: 70vh;
-  max-height: 800px;
+  min-height: 200px;
+  max-height: 70vh;
   background-color: #212124;
-  padding: 50px 0 50px 0;
+  padding-top: 50px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .bottom-half {
@@ -32,7 +34,8 @@
 .show-container img {
   display: block;
   margin: auto;
-  height: 100%;
+  max-height: calc(70vh - 50px);
+  max-width: 100vw;
 }
 
 .show-left-half {
