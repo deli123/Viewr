@@ -82,3 +82,7 @@ input.button-separator {
   margin-bottom: 1rem;
   width: 270px;
 }
+
+.errors {
+  color: red;
+}

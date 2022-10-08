@@ -41,7 +41,7 @@ const SignupForm = () => {
       <form className="auth-form" onSubmit={handleSubmit}>
         <img alt="logo" src={logo} />
         <h6>Sign up for Viewr</h6>
-        <ul>
+        <ul className="errors">
           {errors.map((error) => (
             <li key={error}>{error}</li>
           ))}
