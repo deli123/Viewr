@@ -32,14 +32,14 @@
 }
 
 .overlay-text-author h1 {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   min-height: 17px;
 }
 
 .overlay-text-author span {
   color: hsla(0, 0%, 100%, 0.7);
-  font-size: 11px;
+  font-size: 0.6875rem;
   transition: color 0.15s linear;
 }
 

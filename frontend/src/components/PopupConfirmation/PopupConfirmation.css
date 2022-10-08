@@ -33,13 +33,13 @@
 .popup-title {
   color: #212124;
   word-wrap: break-word;
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
 }
 
 .popup-question {
   color: #212124;
-  font-size: 14px;
+  font-size: 0.875rem;
   min-height: 60px;
   overflow-y: auto;
   padding: 0 20px 20px;
@@ -62,8 +62,8 @@
 
 .popup-buttons button {
   margin-left: 10px;
-  font-size: 14px;
-  line-height: 7px;
+  font-size: 0.875rem;
+  line-height: 0.4375rem;
   height: 29px;
   width: 13.3vw;
   max-width: 80px;

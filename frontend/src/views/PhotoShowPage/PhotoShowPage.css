@@ -15,7 +15,7 @@
 
 .link-explore a {
   color: white;
-  font-size: 14px;
+  font-size: 1rem;
   left: 20px;
   top: 18px;
   position: absolute;
@@ -27,7 +27,7 @@
 
 .left-arrow {
   transform: translateY(20%);
-  font-size: 16px;
+  font-size: 1rem;
   padding-right: 7px;
 }
 
@@ -59,7 +59,7 @@
 
 .show-user-profile a {
   color: #212124;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   padding-left: 1px;
   line-height: 1;
@@ -71,9 +71,9 @@
 .show-user-profile h1 {
   color: #212124;
   word-wrap: break-word;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 18px;
+  line-height: 1.125rem;
   margin: 20px 0 10px 0;
   padding-left: 5px;
   min-height: 18px;
@@ -97,9 +97,9 @@
 .photo-details p {
   color: #212124;
   padding-left: 5px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.125rem;
 }
 
 .comment-line-separator {
@@ -146,19 +146,19 @@
 }
 
 .photo-stats h1 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.125rem;
 }
 
 .photo-stats-left span {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   color: #898989;
 }
 
 .photo-stats-date {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }
 

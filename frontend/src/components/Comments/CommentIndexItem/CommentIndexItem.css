@@ -8,7 +8,7 @@
   box-sizing: border-box;
   color: #212124;
   word-break: break-all;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .comment:hover {
@@ -36,8 +36,8 @@
 }
 
 .comment-header {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   font-weight: 600;
 }
 
@@ -73,7 +73,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 6px 10px;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
   box-sizing: border-box;
   border-radius: 3px;
@@ -94,7 +94,7 @@ textarea:focus-visible {
 .comment-form-button {
   color: white;
   background: #128fdc;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   height: 32px;
   margin-left: auto;

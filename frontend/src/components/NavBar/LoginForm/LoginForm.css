@@ -25,8 +25,8 @@
   width: 302px;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 1rem;
+  line-height: 1rem;
   color: #212124;
   border-radius: 0.25rem;
   border: 1px solid dimgray;
@@ -59,7 +59,7 @@ input.auth-button {
   background-color: #128fdc;
   font-weight: 600;
   color: white;
-  font-size: 14px;
+  font-size: 0.875rem;
   border: none;
   font-family: Helvetica, sans-serif;
   height: 40px;
