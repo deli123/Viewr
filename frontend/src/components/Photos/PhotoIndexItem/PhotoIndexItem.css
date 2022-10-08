@@ -1,12 +1,12 @@
 .photo-index-item {
-  flex-grow: 1;
+  flex-grow: 2;
   margin-right: 5px;
   margin-bottom: 1px;
   position: relative;
 }
 
 .photo-index-item img {
-  height: 250px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }

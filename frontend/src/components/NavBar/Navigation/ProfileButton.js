@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from "../../../store/session";
 import { FaUserCircle } from "react-icons/fa";
 import "./ProfileButton.css";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -30,18 +30,24 @@ const ProfileButton = ({ user }) => {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    history.push('/login');
+    history.push("/login");
   };
 
   return (
     <>
       <div className="profile-dropdown">
         <button className="profile-button" onClick={openMenu}>
-          <FaUserCircle className="profile-button-icon" fontSize={"30px"} color="white" />
+          <FaUserCircle
+            className="profile-button-icon"
+            fontSize={"30px"}
+            color="white"
+          />
         </button>
         {showMenu && (
           <div className="dropdown-menu">
-            <h1>{`Welcome, ${user.username}`}</h1>
+            <Link to={`/users/${user.id}`}>
+              <h1>{`Welcome, ${user.username}`}</h1>
+            </Link>
             <button className="logout-button" onClick={logout}>
               Log Out
             </button>

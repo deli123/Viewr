@@ -90,7 +90,7 @@ const PhotoForm = () => {
                 }
               />
               <textarea
-                rows="4"
+                rows="5"
                 placeholder="Add a description"
                 onChange={handleChange}
               />

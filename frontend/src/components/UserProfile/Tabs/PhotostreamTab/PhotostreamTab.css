@@ -6,17 +6,25 @@
 
 .photostream-photo {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   margin: 12px;
   display: inline-block;
+}
+
+@media only screen and (max-width: 1920px) {
+  .photostream-photo {
+    width: 280px;
+    height: 280px;
+  }
 }
 
 .photostream-image {
   display: block;
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .photostream-overlay {

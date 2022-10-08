@@ -6,6 +6,7 @@
   border-radius: 40px;
   width: 240px;
   background-color: #101010;
+  margin-right: 15px;
 }
 
 .search-bar-container:hover .search-bar {

@@ -7,7 +7,7 @@
 
 .photo-form-sidebar {
   margin-left: 10px;
-  min-width: 250px;
+  width: 15%;
   background: rgba(0, 0, 0, 0.5);
   height: calc(100% - 16px);
   border-radius: 6px;
@@ -60,18 +60,20 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50%;
-  width: 100%;
-  margin-right: 220px;
+  height: 60%;
+  width: 60%;
   box-sizing: border-box;
-  padding-top: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .photo-preview img {
   display: block;
-  width: 50%;
-  height: 100%;
   box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .file-input-box {
@@ -81,9 +83,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 50%;
-  left: 52.5%;
-  transform: translate(-50%, -50%);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .file-input-box img {
@@ -111,9 +112,4 @@ textarea {
 .file-input-box-label p {
   position: relative;
   transform: translateY(-200%);
-}
-
-.move-box-position {
-  top: 62.5%;
-  left: 52.5%;
 }
