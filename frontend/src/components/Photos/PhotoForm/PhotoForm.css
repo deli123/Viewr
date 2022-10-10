@@ -60,13 +60,24 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60%;
-  width: 60%;
+  width: 500px;
+  height: 500px;
   box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  outline: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.photo-preview h1 {
+  color: white;
+  font-size: 3rem;
 }
 
 .photo-preview img {
@@ -90,7 +101,7 @@ textarea {
 .file-input-box img {
   width: 100%;
   height: 100%;
-} 
+}
 
 .file-input-box input {
   opacity: 0;
@@ -112,4 +123,17 @@ textarea {
 .file-input-box-label p {
   position: relative;
   transform: translateY(-200%);
+}
+
+@media all and (min-width: 1921px) and (min-height: 1500px) {
+  .photo-preview {
+    width: 1000px;
+    height: 1000px;
+  }
+}
+
+@media all and (max-height: 768px) {
+  .photo-preview {
+    transform: translate(-50%, -30%);
+  }
 }

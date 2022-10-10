@@ -55,7 +55,7 @@ const PhotoForm = () => {
     data.append("photo[userId]", photoData.userId);
     data.append("photo[photo]", photoData.photoFile);
     dispatch(createPhoto(data));
-    history.push(`/users/${user.id}`)
+    history.push(`/users/${user.id}`);
   };
 
   return (
@@ -102,8 +102,11 @@ const PhotoForm = () => {
             </form>
           </div>
         </div>
-        <div className="photo-preview">
-          {photoURL && <img src={photoURL} alt="preview" />}
+        <div
+          className="photo-preview"
+          style={{ backgroundImage: photoURL ? `url(${photoURL})` : "url('')" }}
+        >
+          {!photoURL && <h1>Upload an image!</h1>}
         </div>
       </div>
     </>
