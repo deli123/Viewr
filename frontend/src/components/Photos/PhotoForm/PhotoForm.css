@@ -66,7 +66,7 @@ textarea {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -89,18 +89,20 @@ textarea {
 
 .file-input-box {
   position: absolute;
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 10%);
 }
 
 .file-input-box img {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .file-input-box input {
@@ -135,5 +137,24 @@ textarea {
 @media all and (max-height: 768px) {
   .photo-preview {
     transform: translate(-50%, -30%);
+  }
+}
+
+@media all and (min-width: 2400px) and (min-height: 1500px) {
+  .photo-preview {
+    width: 1000px;
+    height: 1000px;
+  }
+  
+  .file-input-box {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media all and (min-width: 3000px) and (min-height: 2000px) {
+  .photo-preview {
+    width: 1500px;
+    height: 1500px;
   }
 }

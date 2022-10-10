@@ -1,5 +1,5 @@
 import "./PersonalLinks.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaAngellist } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
 
 const PersonalLinks = () => {
@@ -14,6 +14,11 @@ const PersonalLinks = () => {
         <li>
           <a href="https://www.linkedin.com/in/derli/">
             <FaLinkedin fontSize="30px" color={"white"} />
+          </a>
+        </li>
+        <li>
+          <a href="https://angel.co/u/derek-li-30">
+            <FaAngellist fontSize={"30px"} color={"white"} />
           </a>
         </li>
         <li>
