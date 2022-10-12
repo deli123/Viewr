@@ -18,19 +18,24 @@
 }
 
 .photo-form-title {
-  padding: 10px 10px 0px 0;
+  padding: 10px 10px 20px 0;
   margin-top: 10px;
 }
 
 .photo-form-title h1 {
   font-size: 1.5rem;
-  color: #999;
+  color: white;
   font-weight: 300;
 }
 
 .photo-form-container {
   width: 100%;
   position: relative;
+}
+
+.photo-form-container label {
+  color: white;
+  font-size: 1.25rem;
 }
 
 .photo-form-container input {
@@ -44,7 +49,9 @@
 }
 
 .photo-form-container textarea {
-  padding: 5px;
+  padding: 8px;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
 }
 
 textarea {
@@ -52,7 +59,7 @@ textarea {
 }
 
 .photo-form-title-input {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -145,7 +152,7 @@ textarea {
     width: 1000px;
     height: 1000px;
   }
-  
+
   .file-input-box {
     width: 400px;
     height: 200px;

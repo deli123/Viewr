@@ -81,16 +81,19 @@ const PhotoForm = () => {
           )}
           <div className="photo-form-container">
             <form>
-              <input
+              <label>Title:</label>
+              <textarea
                 className="photo-form-title-input"
                 type="text"
                 placeholder="Title"
                 onChange={(e) =>
                   setPhotoData({ ...photoData, title: e.target.value })
                 }
+                rows="3"
               />
+              <label>Description:</label>
               <textarea
-                rows="5"
+                rows="6"
                 placeholder="Add a description"
                 onChange={handleChange}
               />
