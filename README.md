@@ -8,12 +8,20 @@
   - Demo login button is provided
 - User profile page with tabs for *About* and *Photostream* (a grid view of all uploads by that user).
 - Users can upload, edit, and delete their own posts.
-- Uses can create, edit, and delete comments on posts.
+- Users can create, edit, and delete comments on posts.
+- Users are able to favorite posts
 - Search bar for searching posts, filtered by title, people, and tags 
-- Able to favorite posts
 
 # Technologies
 
 - Frontend: JavaScript, React, Redux
 - Backend: Ruby, Ruby on Rails, jBuilder, PostgreSQL, Active Storage
 - Hosting & Server: Heroku, AWS S3
+
+# Preview
+
+## Explore and Show Page
+![Preview](app/assets/images/preview.gif)
+
+## Search Posts by title, people, and tags
+![Search demo](app/assets/images/search-demo.gif)
