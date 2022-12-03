@@ -21,7 +21,7 @@ const PhotostreamTab = () => {
                   alt={photo.title}
                 />
               </Link>
-              <div className="image-overlay photostream-overlay-fade">
+              <div className="image-overlay overlay-fade">
                 <div className="overlay-text overlay-text-padding">
                   <div className="overlay-text-author">
                     <h1>{photo.title}</h1>

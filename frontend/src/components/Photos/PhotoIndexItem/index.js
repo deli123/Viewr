@@ -26,7 +26,7 @@ const PhotoIndexItem = ({ photo }) => {
         <Link to={`/photos/${photo.id}`}>
           <img src={photo.photoUrl} alt={photo.title} />
         </Link>
-        <div className="image-overlay overlay-fade">
+        <div className="image-overlay overlay-fade explore-photo-overlay">
           <div className="overlay-text">
             <div className="overlay-text-author">
               <h1>{photo.title}</h1>

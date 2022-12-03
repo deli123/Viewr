@@ -21,6 +21,10 @@
   width: 100%;
 }
 
+.explore-photo-overlay {
+  padding-top: 8px;
+}
+
 .overlay-text {
   display: flex;
   flex-direction: row;
