@@ -6,7 +6,7 @@ import UserProfileBody from "../../components/UserProfile/UserProfileBody";
 import UserProfileHeader from "../../components/UserProfile/UserProfileHeader";
 import { getPhotos } from "../../store/reducers/photos_reducer";
 import { fetchUser, getAuthor } from "../../store/reducers/users_reducer";
-import "./UserProfilePage.css"
+import "./UserProfilePage.css";
 
 const UserProfilePage = () => {
   const { userId } = useParams();
@@ -27,11 +27,6 @@ const UserProfilePage = () => {
           <UserProfileHeader />
           <UserProfileBody />
         </>
-      )}
-      {!user && (
-        <div className="explore-container no-user-msg">
-          <h3>This user does not exist!</h3>
-        </div>
       )}
     </>
   );
