@@ -17,11 +17,6 @@ const PersonalLinks = () => {
           </a>
         </li>
         <li>
-          <a href="https://angel.co/u/derek-li-30">
-            <FaAngellist fontSize={"30px"} color={"white"} />
-          </a>
-        </li>
-        <li>
           <a href="mailto:liderek63@gmail.com">
             <ImMail fontSize={"30px"} color={"white"} />
           </a>

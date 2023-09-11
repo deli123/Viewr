@@ -1,6 +1,6 @@
 # Viewr
 
-[Viewr](https://viewrr.herokuapp.com) is a full stack clone of Flickr, an image and video hosting service.
+[Viewr](https://viewr.onrender.com) is a full stack clone of Flickr, an image and video hosting service.
  
 # Features
 
