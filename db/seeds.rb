@@ -123,26 +123,6 @@ photo4 =
 file = URI.open("#{path}photo4.jpg")
 photo4.photo.attach(io: file, filename: "photo4.jpg")
 
-photo5 =
-  Photo.create!(
-    title: "Work of art",
-    description:
-      "The height of buildings is a common topic in architecture and engineering, but surprisingly, it is rarely discussed in the context of art.",
-    user_id: demo.id
-  )
-file = URI.open("#{path}photo5.jpg")
-photo5.photo.attach(io: file, filename: "photo5.jpg")
-
-photo6 =
-  Photo.create!(
-    title: "Architecture",
-    description:
-      "Tall, Amazing, Glorious, Beautiful, Buildings, Architecture, Architecture",
-    user_id: user1.id
-  )
-file = URI.open("#{path}photo6.jpg")
-photo6.photo.attach(io: file, filename: "photo6.jpg")
-
 photo7 =
   Photo.create!(
     title: "I love this",
@@ -152,66 +132,6 @@ photo7 =
   )
 file = URI.open("#{path}photo7.jpg")
 photo7.photo.attach(io: file, filename: "photo7.jpg")
-
-photo8 =
-  Photo.create!(
-    title: "Beautiful",
-    description:
-      "Tall buildings with beautiful art on top.  Most people would prefer to live in a tall building that is beautiful and has a lot of interesting artworks on it.",
-    user_id: user1.id
-  )
-file = URI.open("#{path}photo8.jpg")
-photo8.photo.attach(io: file, filename: "photo8.jpg")
-
-photo9 =
-  Photo.create!(
-    title: "Amazing skyscrapers",
-    description:
-      "Tall Buildings are a part of our lives that we don't give much thought to. But they are an art form in their own right. Check out these amazing skyscrapers, church spires, and other architectural wonders.",
-    user_id: user1.id
-  )
-file = URI.open("#{path}photo9.jpg")
-photo9.photo.attach(io: file, filename: "photo9.jpg")
-
-photo10 =
-  Photo.create!(
-    title: "Truly beautiful",
-    description:
-      "Tall buildings are beautiful. It's true. Some of the most famous and beautiful buildings in the world are towers. Learn about their history and design.",
-    user_id: user1.id
-  )
-file = URI.open("#{path}photo10.jpg")
-photo10.photo.attach(io: file, filename: "photo10.jpg")
-
-photo11 =
-  Photo.create!(
-    title: "Architectural beauty",
-    description:
-      "Tall buildings are often the epitome of architectural beauty, and the tallest buildings in the world are certainly some of the most impressive and beautiful. Explore tall buildings from all over the world, from the pyramids of Egypt right up to the Petronas Towers of Kuala Lumpur.",
-    user_id: user2.id
-  )
-file = URI.open("#{path}photo11.jpg")
-photo11.photo.attach(io: file, filename: "photo11.jpg")
-
-photo12 =
-  Photo.create!(
-    title: "A building I stumbled upon",
-    description:
-      "Explore the tallest buildings in the world, from the Burj Khalifa to the Willis Tower in Chicago.",
-    user_id: user2.id
-  )
-file = URI.open("#{path}photo12.jpg")
-photo12.photo.attach(io: file, filename: "photo12.jpg")
-
-photo13 =
-  Photo.create!(
-    title: "Looking up",
-    description:
-      "A group of tall and beautiful buildings, mostly residential, towers over the city of Delhi and at night, they seem to glow. See more beautiful tall buildings.",
-    user_id: user2.id
-  )
-file = URI.open("#{path}photo13.jpg")
-photo13.photo.attach(io: file, filename: "photo13.jpg")
 
 photo14 =
   Photo.create!(
@@ -232,26 +152,6 @@ photo15 =
   )
 file = URI.open("#{path}photo15.jpg")
 photo15.photo.attach(io: file, filename: "photo15.jpg")
-
-photo16 =
-  Photo.create!(
-    title: "Yes",
-    description:
-      "Tall. Amazing. Glorious. Beautiful. These are some of the words used to describe the World Trade Center. The World Trade Center was a complex of two towers and four underground levels located in New York City's Lower Manhattan. The two towers, built on the site of the former Twin Towers,",
-    user_id: user3.id
-  )
-file = URI.open("#{path}photo16.jpg")
-photo16.photo.attach(io: file, filename: "photo16.jpg")
-
-photo17 =
-  Photo.create!(
-    title: "Masterpiece",
-    description:
-      "A tall building is a building that rises a great height. The term is sometimes used more loosely to include spires, towers and other structures that are tall but not made of steel.",
-    user_id: user3.id
-  )
-file = URI.open("#{path}photo17.jpg")
-photo17.photo.attach(io: file, filename: "photo17.jpg")
 
 photo18 =
   Photo.create!(
@@ -282,16 +182,6 @@ photo20 =
   )
 file = URI.open("#{path}photo20.jpg")
 photo20.photo.attach(io: file, filename: "photo20.jpg")
-
-photo21 =
-  Photo.create!(
-    title: "Tall",
-    description:
-      "Tall, beautiful, amazing, lovely, impressed, artwork, height.",
-    user_id: user4.id
-  )
-file = URI.open("#{path}photo21.jpg")
-photo21.photo.attach(io: file, filename: "photo21.jpg")
 
 comment1 = Comment.create!(body: "first", author_id: user1.id, photo_id: photo1.id)
 comment2 = Comment.create!(body: "Impressive!!!!", author_id: user2.id, photo_id: photo1.id)
