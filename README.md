@@ -16,7 +16,7 @@
 
 - Frontend: JavaScript, React, Redux
 - Backend: Ruby, Ruby on Rails, jBuilder, PostgreSQL, Active Storage
-- Hosting & Server: Heroku, AWS S3
+- Hosting & Server: [Render](https://render.com/), AWS S3
 
 # Preview
 

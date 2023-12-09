@@ -22,6 +22,7 @@ import TagsForm from "../../components/Tags/TagsForm";
 import "./PhotoShowPage.css";
 import PopupConfirmation from "../../components/PopupConfirmation";
 import PhotoEditForm from "../../components/Photos/PhotoEditForm";
+import FadeLoader from "react-spinners/FadeLoader";
 
 const PhotoShowPage = () => {
   const { photoId } = useParams();
@@ -37,7 +38,15 @@ const PhotoShowPage = () => {
   const likes = useSelector(getLike);
   const tags = useSelector(getTags);
   const sessionUser = useSelector((state) => state.session.user);
+  const [loading, setLoading] = useState(true);
+
   if (!sessionUser) return <Redirect to="/login" />;
+
+  const cssOverride = {
+    position: "absolute",
+    top: "50%",
+    left: "50%"
+  };
 
   const hidePopup = () => {
     setDisplayPopup(false);
@@ -62,7 +71,23 @@ const PhotoShowPage = () => {
             Back to explore
           </Link>
         </div>
-        {photo && <img src={photo.photoUrl} alt={photo.title} />}
+        <FadeLoader
+          loading={loading}
+          cssOverride={cssOverride}
+          color="#F3F5F6"
+          height={8}
+          margin={-7}
+          radius={1}
+          speedMultiplier={1}
+          width={3}
+        />
+        {photo && (
+          <img
+            src={photo.photoUrl}
+            alt={photo.title}
+            onLoad={(e) => setLoading(false)}
+          />
+        )}
         <div className="like-delete-button">
           {likes && (
             <>
